@@ -1,0 +1,65 @@
+/* ===== 问号上角标提示样式 ===== */
+.tooltip-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #dddde0;
+  color: white;
+  text-align: center;
+  line-height: 12px;
+  border-radius: 50%;
+  margin-left: 6px;
+  cursor: help;
+  position: relative;
+  vertical-align: super;
+  font-size: 8px;
+  transform: translateY(-2px);
+}
+
+.tooltip-icon:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 6px 10px;
+  border-radius: 6px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  line-height: 1.4;
+  white-space: pre-line;
+  min-width: 120px;
+  text-align: center;
+  max-width: 220px;
+  word-wrap: break-word;
+}
+
+.tooltip-icon:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+  z-index: 10;
+}
+
+[data-theme="dark"] .tooltip-icon {
+  background-color: #6b7280;
+}
+
+[data-theme="dark"] .tooltip-icon:hover::after {
+  background-color: #374151;
+}
+
+[data-theme="dark"] .tooltip-icon:hover::before {
+  border-color: #374151 transparent transparent transparent;
+}

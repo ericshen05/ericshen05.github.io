@@ -1,0 +1,79 @@
+/* ===== 全局变量 ===== */
+:root {
+  /* 日间模式（默认） */
+  --primary: #6a8cff;
+  --primary-light: #8aa9ff;
+  --primary-soft: #f0f4ff;
+  --primary-deep: #4a6bd8;
+  --bg-gradient-start: #f5f7ff;
+  --bg-gradient-end: #ffffff;
+  --card-bg: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-soft: #6b7280;
+  --border-light: rgba(106, 140, 255, 0.1);
+  --border-hover: rgba(106, 140, 255, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --tag-bg: #f0f4ff;
+  --tag-text: #4a6bd8;
+  --item-bg: #f9fafb;
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --social-bg: #f3f4f6;
+  --social-color: #4b5563;
+  --level-bar-bg: #e5e7eb;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-full: 30px;
+  --font-sans:
+    "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", "Noto Sans SC", serif;
+}
+
+/* 夜间模式变量 */
+[data-theme="dark"] {
+  --primary: #7c9cff;
+  --primary-light: #5a7ae0;
+  --primary-soft: #2a2f4d;
+  --primary-deep: #8aa9ff;
+  --bg-gradient-start: #1a1f2e;
+  --bg-gradient-end: #232838;
+  --card-bg: #2d3349;
+  --text-primary: #e5e7eb;
+  --text-secondary: #cbd5e1;
+  --text-soft: #9ca3af;
+  --border-light: rgba(124, 156, 255, 0.2);
+  --border-hover: rgba(124, 156, 255, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --tag-bg: #2a2f4d;
+  --tag-text: #a5c0ff;
+  --item-bg: #252b3d;
+  --navbar-bg: rgba(45, 51, 73, 0.9);
+  --social-bg: #353e5a;
+  --social-color: #cbd5e1;
+  --level-bar-bg: #3a4059;
+}
+
+/* ===== 重置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  );
+  min-height: 100vh;
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition:
+    background 0.3s ease,
+    color 0.2s ease;
+}

@@ -1,0 +1,29 @@
+/* ===== 主样式入口文件 ===== */
+
+/* 基础样式 */
+@import "base.css";
+
+/* 布局样式 */
+@import "layout.css";
+
+/* 组件样式 */
+@import "components/about.css";
+@import "components/academy.css";
+@import "components/awards.css";
+@import "components/contact.css";
+@import "components/content-cards.css";
+@import "components/copyright.css";
+@import "components/education.css"; /*未使用*/
+@import "components/faq.css";
+@import "components/hobbies.css";
+@import "components/profile-card.css";
+@import "components/projects.css";
+@import "components/recommendations.css";
+@import "components/skills.css";
+@import "components/timeline.css";
+
+/* 弹窗样式 */
+@import "modals.css";
+
+/* 响应式样式（最后引入） */
+@import "responsive.css";

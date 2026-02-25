@@ -1,0 +1,61 @@
+/* ===== 响应式 ===== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-sidebar {
+    position: static;
+  }
+
+  .profile-card-modern {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .academy-item {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .academy-foldable-item {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .level-bar {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 1rem;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .content-card {
+    padding: 1.5rem;
+  }
+
+  .academy-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .academy-foldable-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
