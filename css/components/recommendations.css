@@ -1,0 +1,38 @@
+/* 推荐语 */
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.testimonial-item {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--item-bg);
+  border-radius: var(--radius-lg); /* 增大圆角 */
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--primary);
+  opacity: 0.2;
+  font-size: 2rem;
+}
+
+.testimonial-item p {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.testimonial-author strong {
+  color: var(--text-primary);
+}

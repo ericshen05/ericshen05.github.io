@@ -1,0 +1,51 @@
+/* 项目列表 */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg); /* 增大圆角 */
+  background: var(--item-bg);
+  transition:
+    all 0.2s,
+    background 0.3s ease;
+}
+
+.project-item:hover {
+  background: var(--primary-soft);
+  transform: translateX(5px);
+}
+
+.project-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}

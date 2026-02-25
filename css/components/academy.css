@@ -1,0 +1,130 @@
+/* ===== 板块2：学术能力 ===== */
+.academy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.academy-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.academy-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.academy-level {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.level-bar {
+  height: 8px;
+  background: var(--level-bar-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.level-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary));
+  border-radius: 4px;
+}
+
+/* 学术能力折叠样式 */
+.academy-foldable {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.academy-foldable-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  background: var(--primary-soft);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.academy-foldable-header:hover {
+  background: #e4ebff;
+  opacity: 0.9;
+}
+
+.academy-foldable-header.active {
+  background: var(--primary-soft);
+  border-bottom: 1px solid var(--primary);
+}
+
+.academy-foldable-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-deep);
+}
+
+.academy-foldable-title i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.academy-foldable-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.academy-foldable-header.active .academy-foldable-icon {
+  transform: rotate(180deg);
+}
+
+.academy-foldable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: var(--card-bg);
+}
+
+.academy-foldable-content.active {
+  max-height: 500px;
+}
+
+.academy-foldable-content .academy-item {
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid var(--border-light);
+  margin: 0;
+}
+
+.academy-foldable-content .academy-item:last-child {
+  border-bottom: none;
+}
+
+.academy-foldable-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 4fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.academy-foldable-name {
+  font-weight: 500;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}

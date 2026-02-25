@@ -1,0 +1,82 @@
+/* ===== 板块4：奖项列表 ===== */
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fef5f5 30%,
+    #fdeeee 60%,
+    #fce8e8 80%
+  );
+  border-left: 4px solid #fbbbbb;
+  border-radius: var(--radius-lg);
+}
+
+.award-item i {
+  width: 32px;
+  height: 32px;
+  background: #fdeeee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff8181;
+  font-size: 1rem;
+}
+
+.award-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.award-item p {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* 夜间主题适配 - 奖项列表 */
+[data-theme="dark"] .award-item {
+  background: linear-gradient(
+    135deg,
+    #2a2f4d 0%,
+    #3a2f4d 30%,
+    #452f4a 60%,
+    #4a2f47 80%
+  );
+  border-left: 4px solid #b36666;
+}
+
+[data-theme="dark"] .award-item i {
+  background: #452f4a;
+  color: #ffa0a0;
+}
+
+[data-theme="dark"] .award-item h3 {
+  color: #f0e0e0;
+}
+
+[data-theme="dark"] .award-item p {
+  color: #c0b0b0;
+}
+
+[data-theme="dark"] .award-item:hover {
+  background: linear-gradient(
+    135deg,
+    #353b5e 0%,
+    #4a3a5e 30%,
+    #553a5a 60%,
+    #5a3a57 80%
+  );
+  border-left-color: #ffa0a0;
+  transition: all 0.3s ease;
+}

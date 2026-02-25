@@ -1,0 +1,124 @@
+/* ===== 左侧卡片 ===== */
+.profile-sidebar {
+  position: sticky;
+  top: 5rem;
+  height: fit-content;
+}
+
+.profile-card-modern {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl); /* 改为与右侧卡片相同的大圆角 */
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  transition:
+    transform 0.2s,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.profile-card-modern:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+}
+
+/* 头像 */
+.avatar-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+}
+
+.avatar-modern {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%; /* 水平居中，垂直向下移动20% */
+  border: 2px solid var(--card-bg);
+  box-shadow: var(--shadow-md);
+  border-color: #eef2ff;
+}
+
+/* 个人信息 */
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  letter-spacing: 6px;
+}
+
+.profile-title {
+  text-align: center;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.profile-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-location i {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.profile-contact {
+  background: var(--primary-soft);
+  border-radius: var(--radius-lg); /* 保持内部卡片圆角 */
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+}
+
+.contact-item i {
+  width: 20px;
+  color: var(--primary);
+}
+
+/* 社交链接 */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--social-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--social-color);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.social-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}

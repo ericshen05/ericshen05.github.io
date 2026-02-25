@@ -1,0 +1,47 @@
+/* 教育背景 */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.education-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.education-details h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.education-meta {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.education-details p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
