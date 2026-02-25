@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人主页 - Eric SHEN</title>
+
+    <!-- 字体 & 图标库 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+    />
+
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="dot"></span>
+          <span>个人简历</span>
+        </div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#home" class="active">首页</a>
+            <a href="#projects">项目</a>
+            <a href="#contact">联系</a>
+            <a href="#about">关于</a>
+          </div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="切换夜间/日间模式"
+          >
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- 左侧：个人信息 -->
+      <aside class="profile-sidebar">
+        <div class="profile-card-modern">
+          <!-- 头像区域 -->
+          <div class="avatar-wrapper">
+            <img src="eric_ava.jpg" alt="头像" class="avatar-modern" />
+          </div>
+
+          <!-- 基本信息 -->
+          <h1 class="profile-name">沈义翔</h1>
+          <p class="profile-title">暨南大学 数学系</p>
+
+          <div class="profile-location">
+            <i class="fas fa-map-pin"></i>
+            <span>南京 · 江苏 · 中国</span>
+          </div>
+
+          <!-- 联系信息 -->
+          <div class="profile-contact">
+            <div class="contact-item">
+              <i class="fab fa-qq"></i>
+              <span>3658409102</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>binggan_233@outlook.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-globe"></i>
+              <span>fanyou.notion.site/homeland</span>
+            </div>
+          </div>
+
+          <!-- 社交链接 -->
+          <div class="social-links">
+            <a
+              href="mailto:binggan_233@outlook.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="#+86*187-1890-5970" class="social-link"
+              ><i class="fas fa-phone"></i
+            ></a>
+            <a
+              href="https://fanyou.notion.site/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-link"></i>
+            </a>
+            <a
+              href="https://weibo.com/u/6012935166"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-weibo"></i>
+            </a>
+          </div>
+
+          <!-- tag -->
+          <div class="skills-grid">
+            <span class="skill-tag">数学</span>
+            <span class="skill-tag">统计学</span>
+            <span class="skill-tag">机器学习</span>
+            <span class="skill-tag">AI</span>
+            <span class="skill-tag">算法</span>
+          </div>
+        </div>
+
+        <!-- 版权 -->
+        <div class="copyright-info">
+          <p>
+            <i class="fa-regular fa-copyright"></i>2026 Eric SHEN · Luoyuu
+            Island
+          </p>
+          <p class="copyright-small">Last updated: Feb 2026</p>
+        </div>
+      </aside>
+
+      <!-- 右侧：简历内容 -->
+      <section class="content-main">
+        <!-- 板块1：个人情况 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-user"></i>
+            个人情况
+          </h2>
+          <p class="about-text">
+            感谢您在百忙之中阅读我的个人陈述，感谢您的关注与选择。我是沈义翔（Eric
+            SHEN），现就读于广州市暨南大学数学系，本科2023级（2027届）信息与计算科学专业。
+            我对于统计学与人工智能方向有十足的兴趣与热爱，立志于将数学原理赋能于统计机器学习算法研究。
+          </p>
+        </div>
+
+        <!-- 板块2：学术能力 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-language"></i>
+            学术能力
+          </h2>
+          <div class="academy-list">
+            <!-- 始终显示的项目 -->
+            <div class="academy-item">
+              <span class="academy-name">平均成绩</span>
+              <span class="academy-level">
+                4.3/5
+                <span
+                  class="tooltip-icon"
+                  data-tooltip="学校采用5分制，每1分折算0.1绩点，平均4.3绩点即平均成绩93"
+                  >?</span
+                >
+              </span>
+              <div class="level-bar">
+                <div class="level-fill" style="width: 93%"></div>
+              </div>
+            </div>
+            <div class="academy-item">
+              <span class="academy-name">成绩排名</span>
+              <span class="academy-level">1/40</span>
+              <div class="level-bar">
+                <div class="level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="academy-item">
+              <span class="academy-name">CET-6</span>
+              <span class="academy-level">
+                570 (84%)
+                <span
+                  class="tooltip-icon"
+                  data-tooltip="分数换算说明：来源于CET官网给出的报道分数常模百分位对照表，详见
+                  https://cet.neea.edu.cn/html1/folder/19081/5124-1.htm"
+                  >?</span
+                >
+              </span>
+              <div class="level-bar">
+                <div class="level-fill" style="width: 84%"></div>
+              </div>
+            </div>
+
+            <!-- 可折叠的课程成绩 -->
+            <div class="academy-foldable">
+              <div class="academy-foldable-header" id="coursesHeader">
+                <span class="academy-foldable-title">
+                  <i class="fas fa-book-open"></i>
+                  核心课程成绩
+                </span>
+                <span class="academy-foldable-icon">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </div>
+              <div class="academy-foldable-content" id="coursesContent">
+                <div class="academy-item">
+                  <span class="academy-foldable-name">数学分析Ⅰ/Ⅱ/Ⅲ</span>
+                  <span class="academy-level">90/94/100</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name">高等代数Ⅰ/Ⅱ</span>
+                  <span class="academy-level">98/97</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 98%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name">概率与统计</span>
+                  <span class="academy-level">97</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 97%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name">常微分方程</span>
+                  <span class="academy-level">99</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 99%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name"
+                    >运筹学
+                    <span
+                      class="tooltip-icon"
+                      data-tooltip="课程学习最优化方法，&#10;内容与机器学习相关。"
+                      >?</span
+                    ></span
+                  >
+                  <span class="academy-level">100</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name"
+                    >计算智能
+                    <span
+                      class="tooltip-icon"
+                      data-tooltip="课程学习智能优化算法（启发式算法）"
+                      >?</span
+                    ></span
+                  >
+                  <span class="academy-level">97</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 97%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name">数据结构</span>
+                  <span class="academy-level">100</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="academy-item">
+                  <span class="academy-foldable-name">数据库原理与应用</span>
+                  <span class="academy-level">97</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: 97%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 板块3：学习经历 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-graduation-cap"></i>
+            学习经历
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>2024年“大湾区杯”金融数学建模比赛</h3>
+                <p class="timeline-meta">2024年11月 · 省级数学建模</p>
+                <p class="timeline-desc">
+                  作为团队队长、建模与论文主力，领导小队成员完成比赛；根据已有的数据建立系统性量化风控的多元线性回归与预测模型，利用常见的深度学习算法进行算法改良，实现训练结果误差低于2.5%；比赛过程中，我与团队成员确定了代码规范等，形成了良好的编程习惯与风格；最终完成比赛论文
+                  1 篇，获得本次比赛<strong>本科组 三等奖</strong>。
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>语义通信与AI智能安全识别系统设计项目</h3>
+                <p class="timeline-meta">
+                  2025-2026年 · <strong>国家级</strong>大学生创新创业项目
+                </p>
+                <p class="timeline-desc">
+                  作为团队核心成员，在中期项目团队中负责开发无人机控制前端界面且设计用户指令输入模块，参与设计系统的编码模块，进行AI框架与模型调用，<strong>该前后端系统已取得软著登记证书</strong>；在前期申报书的撰写中，完全担任全文的框架图绘制并进行全文排版、校对，最终取得国家级立项。
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>2025年第十五届APMCM亚太地区大学生数学建模竞赛</h3>
+                <p class="timeline-meta">
+                  2025年11月 · <strong>国家级</strong>数学建模
+                </p>
+                <p class="timeline-desc">
+                  在比赛中主要负责根据关税问题背景和要求收集贸易数据，对数据进行清洗工作，并根据其他成员建立的模型对回归和预测结果进行分析，以及提出模型的可改进方向等；全程担任英语论文写作工作，最终完成比赛论文
+                  1 篇，获得本次比赛<strong>本科组 二等奖</strong>。
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>其他小型研究经历与比赛</h3>
+                <p class="timeline-meta">2023-2026年</p>
+                <p class="timeline-desc">
+                  1. 校级 2025年吴渔夫学术科技创新竞赛 三等奖<br />
+                  2. 企业级
+                  2025年大学生科技创新大赛暨中国移动创客马拉松大赛人工智能专题高校赛<br />
+                  3. 校级 暨南大学“AI+”应用创新大赛 三等奖<br />
+                  4. 国家级/企业级 2025中国高校计算机大赛 AIGC创新赛
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 板块4：证书与奖项 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-award"></i>
+            证书与奖项
+          </h2>
+          <div class="awards-list">
+            <div class="award-item">
+              <i class="fas fa-trophy"></i>
+              <div>
+                <h3>国家奖学金</h3>
+                <p>2024—2025学年度 · 教育部</p>
+              </div>
+            </div>
+            <div class="award-item">
+              <i class="fas fa-certificate"></i>
+              <div>
+                <h3>优秀青年志愿者</h3>
+                <p>2024-2025学年 · 暨南大学</p>
+              </div>
+            </div>
+            <div class="award-item">
+              <i class="fas fa-medal"></i>
+              <div>
+                <h3>优秀学生二等奖学金</h3>
+                <p>2023-2024学年 · 暨南大学</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 板块5：标签与关键词 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-code"></i>
+            专业标签与关键词
+          </h2>
+          <div class="skills-grid">
+            <span class="skill-tag">数学（高维数据分析）</span>
+            <span class="skill-tag">数据科学</span>
+            <span class="skill-tag">大数据</span>
+            <span class="skill-tag">统计机器学习</span>
+            <span class="skill-tag">AI</span>
+            <span class="skill-tag">算法设计</span>
+            <span class="skill-tag">数理统计</span>
+            <span class="skill-tag">数据分析/数据开发</span>
+          </div>
+        </div>
+
+        <!-- 板块6：精选项目 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-star"></i>
+            精选项目
+          </h2>
+          <div class="projects-list">
+            <div class="project-item">
+              <div class="project-icon">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <div class="project-info">
+                <h3>科研项目部分内容展示</h3>
+                <p>「学习经历」部分中的主持项目负责内容展示。</p>
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-icon">
+                <i class="fas fa-pencil"></i>
+              </div>
+              <div class="project-info">
+                <h3>数学系课程学习平台</h3>
+                <p>个人原创数学基础课程学习站，记录学习笔记、提供学习资源。</p>
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-icon">
+                <i class="fas fa-blog"></i>
+              </div>
+              <div class="project-info">
+                <h3>个人博客平台</h3>
+                <p>
+                  基于Notion平台自行搭建的个人博客，发表周程安排、日常想法文章等。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 板块7：兴趣爱好 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-heart"></i>
+            兴趣爱好
+          </h2>
+          <div class="hobbies-list">
+            <span class="hobby-tag"><i class="fas fa-book"></i> 学习</span>
+            <span class="hobby-tag"><i class="fas fa-music"></i> 轻音乐</span>
+            <span class="hobby-tag"><i class="fas fa-plane"></i> 旅行</span>
+            <span class="hobby-tag"><i class="fas fa-utensils"></i> 美食</span>
+            <span class="hobby-tag"><i class="fas fa-hiking"></i> 徒步</span>
+            <span class="hobby-tag"><i class="fas fa-camera"></i> 摄影</span>
+          </div>
+        </div>
+
+        <!-- 板块8：他人评价 -->
+        <div class="content-card">
+          <h2 class="card-title">
+            <i class="fas fa-quote-right"></i>
+            他人评价
+          </h2>
+          <div class="testimonials-list">
+            <div class="testimonial-item">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                通过和他在一起比赛让我开始相信技术团队也需要学数学的同学，他对问题的理解非常深刻，总能另辟蹊径提出新的方案。
+              </p>
+              <div class="testimonial-author">
+                <strong>陶天汉</strong> · 北京理工大学
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                作为一名跨学科发展的学生，我兼具扎实的技术能力与出色的团队协作力，注重知行合一，善于在多元挑战中快速学习，希望将技术与创意融入更广阔的领域。除技术专长外，我乐于撰写、分享技术经验与科普文章，能够将复杂概念转化为通俗易懂的表达，和相同、不同领域的人进行交流和合作。
+              </p>
+              <div class="testimonial-author">
+                <strong>我自己</strong> · 个人评价
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 板块9：常见问题 -->
+        <div class="content-card contact-card">
+          <h2 class="card-title">
+            <i class="fas fa-question-circle"></i>
+            常见问题
+          </h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question" data-target="faq1">
+                <div class="faq-question-content">
+                  <span class="faq-icon"
+                    ><i class="fas fa-question-circle"></i
+                  ></span>
+                  <h3>你攻读硕士的初心和动力是什么？</h3>
+                </div>
+                <span class="faq-arrow"
+                  ><i class="fas fa-chevron-down"></i
+                ></span>
+              </div>
+              <div class="faq-answer" id="faq1">
+                <div class="faq-answer-content">
+                  <p class="answer-greeting">终生学习的心态</p>
+                  <p class="answer-intro">
+                    我愿意接受新的内容和知识，我认为学习是持续的事情，保持学习状态让我感到充实。
+                  </p>
+                  <div class="answer-list">
+                    <div class="answer-item">
+                      <span class="answer-number">1.</span>
+                      <div class="answer-content">
+                        <strong>独立研究</strong> 良好心态，喜欢独处的感觉
+                        <br />和有些同学被“要坐冷板凳”劝退不同，我会为此感到有任务感、充实感，能在自己喜欢的领域慢慢钻研是具有一定幸福感的事。
+                      </div>
+                    </div>
+                    <div class="answer-item">
+                      <span class="answer-number">2.</span>
+                      <div class="answer-content">
+                        <strong>独特见解</strong> 和 <strong>另辟蹊径</strong>
+                        <br />我坚信数学基础可以从「道」上解决「术」中遇到的困难，我可以提供新的视角来看技术问题。
+                      </div>
+                    </div>
+                    <div class="answer-item">
+                      <span class="answer-number">3.</span>
+                      <div class="answer-content">
+                        <strong>浅尝辄止</strong> 为什么没有选择直接攻读博士？
+                        <br />生存压力大于发展压力。攻读博士首先应具备相应的经济条件资格，而不应该妄想通过攻读博士来实现经济自由。
+                      </div>
+                    </div>
+                  </div>
+                  <p class="answer-intro">
+                    感谢你的阅读，希望一起奋斗的战友、老师、家人、朋友都可以在自己选择的道路上朝着正确的方向前进
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- js文件 -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
