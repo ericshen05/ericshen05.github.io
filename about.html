@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>关于本站 - Eric SHEN</title>
+
+    <!-- 字体 & 图标库 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages/about/about.css" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="dot"></span>
+          <span>个人简历</span>
+        </div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="projects.html">项目</a>
+            <!-- <a href="contact.html">联系</a> -->
+            <a href="about.html" class="active">关于</a>
+          </div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="切换夜间/日间模式"
+          >
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 关于页面 - 全屏宽布局 -->
+    <main class="about-container">
+      <!-- 几何粒子背景 -->
+      <div class="particle-bg">
+        <!-- 圆形粒子 -->
+        <div class="geo-particle circle-particle geo-particle-1"></div>
+        <div class="geo-particle circle-particle geo-particle-4"></div>
+        <div class="geo-particle circle-particle geo-particle-7"></div>
+        <div class="geo-particle circle-particle geo-particle-10"></div>
+
+        <!-- 三角形粒子 -->
+        <div class="geo-particle triangle-particle geo-particle-2"></div>
+        <div class="geo-particle triangle-particle geo-particle-5"></div>
+        <div class="geo-particle triangle-particle geo-particle-8"></div>
+        <div class="geo-particle triangle-particle geo-particle-11"></div>
+
+        <!-- 正方形粒子 -->
+        <div class="geo-particle square-particle geo-particle-3"></div>
+        <div class="geo-particle square-particle geo-particle-6"></div>
+        <div class="geo-particle square-particle geo-particle-9"></div>
+        <div class="geo-particle square-particle geo-particle-12"></div>
+      </div>
+
+      <div class="about-content-wrapper">
+        <div class="about-content">
+          <!-- 左侧：创作团队信息 -->
+          <div class="about-team">
+            <!-- 团队Logo整合在卡片顶部 -->
+            <div class="team-card-header">
+              <div class="team-logo-badge">
+                <img
+                  src="images/luoyuu_logo.png"
+                  alt="luoyuu Logo"
+                  class="team-logo-badge-image"
+                />
+                <div class="team-logo-badge-text">
+                  <h2 class="team-badge-name">洛屿Luoyuu Island</h2>
+                  <p class="team-badge-sub">网络 · 数据 · 设计</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-header"></div>
+
+            <div class="team-grid">
+              <!-- 成员1 -->
+              <div class="team-member">
+                <div class="member-avatar">
+                  <img src="images/kekser_ava.jpg" alt="Eric SHEN" />
+                  <div class="member-role">策划人</div>
+                </div>
+                <h3 class="member-name">沈义翔 Eric SHEN<br />CN: kekser</h3>
+                <p class="member-bio">
+                  整体架构设计，致力于提供优雅而高效的产品和有温度的用户体验。
+                </p>
+                <div class="member-social">
+                  <a
+                    href="https://space.bilibili.com/57763685"
+                    class="member-social-link"
+                    target="_blank"
+                    ><i class="fab fa-bilibili"></i
+                  ></a>
+                  <a
+                    href="https://x.com/binggankekser"
+                    class="member-social-link"
+                    target="_blank"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a
+                    href="https://weibo.com/u/6012935166"
+                    class="member-social-link"
+                    target="_blank"
+                    ><i class="fab fa-weibo"></i
+                  ></a>
+                </div>
+              </div>
+
+              <!-- 成员2 -->
+              <div class="team-member">
+                <div class="member-avatar">
+                  <img
+                    src="https://ui-avatars.com/api/?name=你&size=60&background=8aa9ff&color=fff&bold=false"
+                    alt="You"
+                  />
+                  <div class="member-role">联合策划人</div>
+                </div>
+                <h3 class="member-name">你 You</h3>
+                <p class="member-bio">尽情释放你的魅力吧！</p>
+              </div>
+
+              <!-- 成员3 -->
+              <div class="team-member">
+                <div class="member-avatar">
+                  <img
+                    src="https://ui-avatars.com/api/?name=你&size=60&background=8aa9ff&color=fff&bold=true"
+                    alt="You"
+                  />
+                  <div class="member-role">联合策划人</div>
+                </div>
+                <h3 class="member-name">你 You</h3>
+                <p class="member-bio">尽情施展你的才华吧！</p>
+              </div>
+            </div>
+            <div class="about-tech">
+              <span class="tech-badge">网络</span>
+              <span class="tech-badge">数据</span>
+              <span class="tech-badge">设计</span>
+              <span class="tech-badge">AI</span>
+              <span class="tech-badge">LLMs</span>
+              <span class="tech-badge">运维服务</span>
+            </div>
+          </div>
+
+          <!-- 右侧：简介信息 -->
+          <div class="about-info">
+            <!-- 简介卡片 -->
+            <div class="info-card about-card">
+              <h2 class="card-title-with-icon">
+                <i class="fas fa-info-circle"></i>
+                关于本站
+              </h2>
+              <div class="about-description">
+                <p>
+                  「洛屿Luoyuu
+                  Island」是我个人原创世界观的岛屿名称，并作为我的团队所出品产品的归属名称，我们的标识色是矢车菊蓝，也正是相关站点的主题色。
+                </p>
+                <p>
+                  目前，该团队的构建仍处于我的设想阶段；我期望能与更多志同道合的人合作，去开发理念相同的产品、提供服务。
+                </p>
+                <p>
+                  无论是内容创作，还是任何你认为值得被呈现的事物，这里就有一片属于它的岸。目前我们还很小，小得像浮冰一角。但正因如此，每一份选择和加入，都会成为这座岛的基石。
+                </p>
+              </div>
+            </div>
+
+            <!-- 联系卡片 -->
+            <div class="info-card contact-card-about">
+              <h2 class="card-title-with-icon">
+                <i class="fas fa-paper-plane"></i>
+                联系我们
+              </h2>
+              <div class="contact-methods">
+                <a
+                  href="mailto:maplewinging@hotmail.com"
+                  class="contact-method"
+                >
+                  <i class="fas fa-envelope"></i>
+                  <span>maplewinging@hotmail.com</span>
+                </a>
+                <a
+                  href="https://github.com/binggan233"
+                  class="contact-method"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i>
+                  <span>github.com/binggan233</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 版权信息 -->
+      <div class="copyright-footer">
+        <p class="copyright-text-footer">
+          <i class="fa-regular fa-copyright"></i>
+          2026 Eric SHEN · Luoyuu Island 版权所有
+        </p>
+        <p class="copyright-small-footer">
+          v1.0 / in Nanjing / 最后更新: 2026.02
+        </p>
+      </div>
+    </main>
+
+    <!-- JavaScript 文件 -->
+    <script src="js/pages/main.js"></script>
+    <script src="js/pages/about/about.js"></script>
+  </body>
+</html>

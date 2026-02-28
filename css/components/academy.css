@@ -102,7 +102,7 @@
 }
 
 .academy-foldable-content.active {
-  max-height: 500px;
+  max-height: 800px;
 }
 
 .academy-foldable-content .academy-item {

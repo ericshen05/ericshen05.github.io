@@ -1,0 +1,931 @@
+/* ===== 关于页面 - 全屏宽布局 ===== */
+.about-container {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow-x: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--bg-light) 0%,
+    var(--primary-soft) 100%
+  );
+  padding: 2rem 4rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 几何粒子背景 ===== */
+.particle-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 基础粒子样式 */
+.geo-particle {
+  position: absolute;
+  opacity: 0;
+  animation: floatAndFlicker 12s ease-in-out infinite;
+}
+
+/* 圆形粒子 */
+.circle-particle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(106, 140, 255, 0.6),
+    rgba(74, 107, 216, 0.2)
+  );
+  box-shadow: 0 0 30px rgba(106, 140, 255, 0.3);
+}
+
+/* 三角形粒子 */
+.triangle-particle {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 60px solid rgba(138, 169, 255, 0.5);
+  transform-origin: center;
+  filter: drop-shadow(0 0 20px rgba(138, 169, 255, 0.3));
+}
+
+/* 正方形粒子 */
+.square-particle {
+  width: 50px;
+  height: 50px;
+  background: rgba(74, 107, 216, 0.4);
+  transform: rotate(45deg);
+  box-shadow: 0 0 30px rgba(74, 107, 216, 0.3);
+}
+
+/* 菱形粒子 */
+.diamond-particle {
+  width: 45px;
+  height: 45px;
+  background: rgba(124, 156, 255, 0.4);
+  transform: rotate(45deg) scale(1);
+  box-shadow: 0 0 30px rgba(124, 156, 255, 0.3);
+}
+
+/* 六边形粒子（近似） */
+.hexagon-particle {
+  width: 55px;
+  height: 55px;
+  background: rgba(90, 122, 224, 0.35);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  box-shadow: 0 0 30px rgba(90, 122, 224, 0.3);
+}
+
+/* 添加更多颜色变体 */
+.circle-particle:nth-child(1) {
+  background: radial-gradient(circle at 30% 30%, #6a8cff, #4a6bd8);
+}
+.circle-particle:nth-child(2) {
+  background: radial-gradient(circle at 30% 30%, #8aa9ff, #6a8cff);
+}
+.circle-particle:nth-child(3) {
+  background: radial-gradient(circle at 30% 30%, #7c9cff, #5a7ae0);
+}
+.circle-particle:nth-child(4) {
+  background: radial-gradient(circle at 30% 30%, #9bb5ff, #7c9cff);
+}
+
+.triangle-particle:nth-child(1) {
+  border-bottom-color: rgba(106, 140, 255, 0.6);
+}
+.triangle-particle:nth-child(2) {
+  border-bottom-color: rgba(138, 169, 255, 0.6);
+}
+.triangle-particle:nth-child(3) {
+  border-bottom-color: rgba(124, 156, 255, 0.6);
+}
+.triangle-particle:nth-child(4) {
+  border-bottom-color: rgba(90, 122, 224, 0.6);
+}
+
+.square-particle:nth-child(1) {
+  background: rgba(74, 107, 216, 0.5);
+}
+.square-particle:nth-child(2) {
+  background: rgba(106, 140, 255, 0.5);
+}
+.square-particle:nth-child(3) {
+  background: rgba(138, 169, 255, 0.5);
+}
+.square-particle:nth-child(4) {
+  background: rgba(124, 156, 255, 0.5);
+}
+
+/* 粒子位置 */
+.geo-particle-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.geo-particle-2 {
+  top: 20%;
+  right: 8%;
+  animation-delay: 1.5s;
+}
+
+.geo-particle-3 {
+  bottom: 15%;
+  left: 12%;
+  animation-delay: 2.8s;
+}
+
+.geo-particle-4 {
+  bottom: 25%;
+  right: 15%;
+  animation-delay: 4.2s;
+}
+
+.geo-particle-5 {
+  top: 40%;
+  left: 20%;
+  animation-delay: 5.5s;
+}
+
+.geo-particle-6 {
+  top: 60%;
+  right: 25%;
+  animation-delay: 6.8s;
+}
+
+.geo-particle-7 {
+  bottom: 40%;
+  left: 30%;
+  animation-delay: 8s;
+}
+
+.geo-particle-8 {
+  top: 70%;
+  right: 35%;
+  animation-delay: 9.5s;
+}
+
+.geo-particle-9 {
+  top: 15%;
+  left: 45%;
+  animation-delay: 10.8s;
+}
+
+.geo-particle-10 {
+  bottom: 55%;
+  right: 45%;
+  animation-delay: 12s;
+}
+
+.geo-particle-11 {
+  top: 80%;
+  left: 55%;
+  animation-delay: 13.5s;
+}
+
+.geo-particle-12 {
+  bottom: 65%;
+  right: 60%;
+  animation-delay: 14.8s;
+}
+
+/* 浮动和闪烁动画 */
+@keyframes floatAndFlicker {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  20% {
+    transform: translate(30px, -20px) rotate(45deg) scale(1.2);
+    opacity: 0.8;
+  }
+  30% {
+    transform: translate(-20px, 30px) rotate(90deg) scale(1);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translate(40px, 10px) rotate(135deg) scale(1.1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-30px, -30px) rotate(180deg) scale(0.9);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translate(20px, 40px) rotate(225deg) scale(1.3);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-40px, -10px) rotate(270deg) scale(1);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translate(10px, -40px) rotate(315deg) scale(1.1);
+    opacity: 0.6;
+  }
+  90% {
+    transform: translate(-10px, 20px) rotate(360deg) scale(0.9);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes breatheAndMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(20px, -15px) rotate(45deg) scale(1.3);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-15px, 25px) rotate(90deg) scale(1);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(25px, -20px) rotate(180deg) scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+}
+
+.geo-particle {
+  animation: breatheAndMove 18s ease-in-out infinite;
+}
+
+/* ===== 内容包装器 ===== */
+.about-content-wrapper {
+  /* position: relative; */
+  z-index: 1;
+  flex: 0.2;
+  margin: 0.5rem auto;
+}
+
+/* ===== 主要内容区域 ===== */
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ===== 左侧：创作团队（包含Logo） ===== */
+.about-team {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 卡片顶部的装饰线条 */
+.about-team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--primary-light),
+    var(--primary-deep)
+  );
+  z-index: 1;
+}
+
+/* 团队卡片头部 - 整合Logo区域 */
+.team-card-header {
+  background: linear-gradient(
+    315deg,
+    var(--primary-soft),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.team-logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.team-logo-badge-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px; /* 方形圆角，区别于头像的圆形 */
+  object-fit: cover;
+  /* border: 2px solid var(--primary); */
+  box-shadow: 0 8px 20px rgba(106, 140, 255, 0.3);
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.team-logo-badge:hover .team-logo-badge-image {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.team-logo-badge-text {
+  text-align: left;
+}
+
+.team-badge-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.team-badge-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.team-header {
+  margin-bottom: 2rem;
+  padding-left: 0.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--primary);
+  text-transform: uppercase;
+  background: var(--primary-soft);
+  padding: 0.2rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.team-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.team-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* 团队成员网格 - 保持不变，但微调间距 */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.team-member {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.member-avatar {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1rem;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover .member-avatar img {
+  transform: scale(1.05);
+}
+
+.member-role {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(106, 140, 255, 0.3);
+}
+
+.member-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.member-bio {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.member-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.member-social-link {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-decoration: none; /* 移除下划线 */
+}
+
+.member-social-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ===== 右侧：简介信息 ===== */
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-soft);
+  padding-bottom: 0.8rem;
+}
+
+.card-title-with-icon i {
+  color: var(--primary);
+}
+
+/* 关于描述 */
+.about-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  /* margin-bottom: 1.5rem; */
+}
+
+.about-description p {
+  margin-bottom: 1rem;
+}
+
+.about-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-badge {
+  padding: 0.3rem 0.8rem;
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 联系方法 */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.contact-method:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateX(8px);
+}
+
+.contact-method i {
+  width: 20px;
+  font-size: 1.1rem;
+}
+
+.contact-note {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+.thanks-message p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ===== 版权信息 - 页脚 ===== */
+.copyright-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  /* margin-top: 1rem;
+  padding-top: 1rem; */
+}
+
+.copyright-text-footer {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.copyright-link {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary);
+}
+
+.copyright-link:hover {
+  color: var(--primary-deep);
+}
+
+.copyright-small-footer {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.copyright-small-footer i {
+  font-size: 0.7rem;
+}
+
+/* 夜间模式适配 */
+[data-theme="dark"] .about-team,
+[data-theme="dark"] .info-card {
+  background: rgba(26, 31, 48, 0.8);
+}
+
+[data-theme="dark"] .team-member {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .team-logo {
+  background: rgba(26, 31, 48, 0.6);
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-container {
+    padding: calc(70px + 2rem) 2rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-philosophy {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-container {
+    padding: calc(70px + 1rem) 1rem 1rem;
+  }
+
+  .team-title {
+    font-size: 2rem;
+  }
+
+  .team-logo {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== 夜间模式适配 ===== */
+[data-theme="dark"] .about-container {
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark) 0%,
+    var(--primary-soft) 100%
+  );
+}
+
+[data-theme="dark"] .about-team,
+[data-theme="dark"] .info-card {
+  background: rgba(26, 31, 48, 0.85);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .team-card-header {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 47, 77, 0.8),
+    rgba(26, 31, 48, 0.5)
+  );
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .team-logo-badge-image {
+  border-color: var(--primary-light);
+  box-shadow: 0 8px 20px rgba(124, 156, 255, 0.2);
+}
+
+[data-theme="dark"] .team-badge-name {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .team-badge-sub {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .team-badge-slogan {
+  color: var(--primary-light);
+  border-top-color: var(--border-light);
+}
+
+[data-theme="dark"] .section-tag {
+  background: var(--primary-soft);
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .team-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .team-subtitle {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .team-member {
+  background: var(--card-bg);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .team-member:hover {
+  border-color: var(--primary-light);
+}
+
+[data-theme="dark"] .member-name {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .member-bio {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .member-social-link {
+  background: var(--primary-soft);
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .member-social-link:hover {
+  background: var(--primary-light);
+  color: var(--bg-dark);
+}
+
+[data-theme="dark"] .philosophy-item {
+  background: rgba(26, 31, 48, 0.5);
+}
+
+[data-theme="dark"] .philosophy-item:hover {
+  background: var(--primary-soft);
+}
+
+[data-theme="dark"] .philosophy-item i {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .philosophy-item h4 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .philosophy-item p {
+  color: var(--text-soft);
+}
+
+[data-theme="dark"] .card-title-with-icon {
+  color: var(--text-primary);
+  border-bottom-color: var(--border-light);
+}
+
+[data-theme="dark"] .card-title-with-icon i {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .about-description {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .tech-badge {
+  background: var(--primary-soft);
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .tech-badge:hover {
+  background: var(--primary-light);
+  color: var(--bg-dark);
+}
+
+[data-theme="dark"] .contact-method {
+  background: var(--card-bg);
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .contact-method:hover {
+  background: var(--primary-light);
+  color: var(--bg-dark);
+}
+
+[data-theme="dark"] .contact-note {
+  color: var(--text-soft);
+}
+
+[data-theme="dark"] .thanks-message {
+  background: linear-gradient(135deg, var(--primary-soft), transparent);
+}
+
+[data-theme="dark"] .thanks-message p {
+  color: var(--text-primary);
+}
+
+/* 粒子背景夜间模式适配 */
+[data-theme="dark"] .circle-particle {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(124, 156, 255, 0.4),
+    rgba(90, 122, 224, 0.15)
+  );
+  box-shadow: 0 0 30px rgba(124, 156, 255, 0.2);
+}
+
+[data-theme="dark"] .triangle-particle {
+  border-bottom-color: rgba(124, 156, 255, 0.3);
+  filter: drop-shadow(0 0 20px rgba(124, 156, 255, 0.15));
+}
+
+[data-theme="dark"] .square-particle {
+  background: rgba(90, 122, 224, 0.25);
+  box-shadow: 0 0 30px rgba(90, 122, 224, 0.15);
+}
+
+[data-theme="dark"] .diamond-particle {
+  background: rgba(124, 156, 255, 0.25);
+  box-shadow: 0 0 30px rgba(124, 156, 255, 0.15);
+}
+
+[data-theme="dark"] .hexagon-particle {
+  background: rgba(106, 140, 255, 0.2);
+  box-shadow: 0 0 30px rgba(106, 140, 255, 0.15);
+}
+
+/* 版权信息夜间模式适配 */
+[data-theme="dark"] .copyright-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-light),
+    transparent
+  );
+}
+
+[data-theme="dark"] .copyright-text-footer {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .copyright-link {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .copyright-link:hover {
+  color: var(--primary);
+}
+
+[data-theme="dark"] .copyright-small-footer {
+  color: var(--text-soft);
+}

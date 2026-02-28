@@ -1,0 +1,102 @@
+/* 提示框样式 - 默认隐藏 */
+.copy-tooltip {
+  position: absolute;
+  bottom: 100%; /* 显示在按钮上方 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50; /* 绿底 */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 8px; /* 与按钮的间距 */
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 提示框小箭头 */
+.copy-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #4caf50 transparent transparent transparent;
+}
+
+/* 显示提示框 */
+.copy-tooltip.show {
+  display: block;
+  animation: fadeInOut 2s ease forwards;
+}
+
+/* err临时 */
+.tooltip-err {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fb3b3b; /* 红底 */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 提示框小箭头 */
+.tooltip-err::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fb3b3b transparent transparent transparent;
+}
+
+/* 显示提示框 */
+.tooltip-err.show {
+  display: block;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 淡入淡出动画 */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

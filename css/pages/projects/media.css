@@ -1,0 +1,128 @@
+/* ===== 媒体区域 ===== */
+.project-media {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  transform: perspective(1000px) rotateY(0deg);
+  transition: var(--transition-smooth);
+}
+
+/* 只有悬停在整个媒体区域时才触发3D效果，不包含轮播图内部元素的缩放 */
+.project-media:not(:has(.carousel)):hover {
+  transform: perspective(1000px) rotateY(-2deg) scale(1.02);
+  box-shadow:
+    var(--shadow-xl),
+    0 0 0 2px var(--primary-light);
+}
+
+/* ===== 轮播图样式 ===== */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  border-radius: var(--radius-xl);
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  transition: transform 0.5s ease-in-out; /* 改为较慢的过渡 */
+}
+
+/* 轮播图内部图片悬停效果（单独控制） */
+.carousel-slide:hover img {
+  transform: scale(1.05);
+}
+
+/* 轮播指示点 - 悬停时不触发放大效果 */
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.carousel-dots .dot.active {
+  background: var(--primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px rgba(106, 140, 255, 0.3);
+}
+
+.carousel-dots .dot:hover {
+  background: var(--primary-light);
+  transform: scale(1.2);
+}
+
+/* 确保轮播图按钮和指示点不会触发图片放大 */
+.carousel-btn,
+.carousel-dots,
+.carousel-dots * {
+  pointer-events: auto; /* 确保可点击 */
+}
+
+/* 修复悬停时的层级问题 */
+.carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-btn,
+.carousel-dots {
+  z-index: 10;
+}
+
+/* 修复 reverse 布局中的轮播图方向 */
+.project-content.reverse .carousel {
+  direction: ltr; /* 强制轮播图使用左到右方向 */
+}
+
+.project-content.reverse .carousel-track {
+  direction: ltr;
+}
+
+.project-content.reverse .carousel-btn.prev {
+  left: 1rem;
+  right: auto;
+}
+
+.project-content.reverse .carousel-btn.next {
+  right: 1rem;
+  left: auto;
+}

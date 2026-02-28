@@ -1,0 +1,84 @@
+/* ===== 项目容器 ===== */
+.projects-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 1px 0;
+  padding: 0;
+}
+
+/* ===== 项目区块 ===== */
+.project-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  background: var(--bg-light);
+  transition: background 0.5s ease;
+}
+
+/* 为不同项目设置微妙的背景变化 */
+.project-section:nth-child(odd) {
+  background: linear-gradient(
+    135deg,
+    var(--bg-light) 0%,
+    var(--primary-soft) 100%
+  );
+}
+
+.project-section:nth-child(even) {
+  background: linear-gradient(
+    135deg,
+    var(--primary-soft) 0%,
+    var(--bg-light) 100%
+  );
+}
+
+/* ===== 项目内容布局 ===== */
+.project-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  max-width: 1400px;
+  width: 100%;
+  align-items: center;
+  transform: translateY(0);
+  opacity: 1;
+  transition: var(--transition-smooth);
+}
+
+.project-content.reverse {
+  grid-template-columns: 0.8fr 1.2fr;
+  direction: rtl;
+}
+
+.project-content.reverse .project-details {
+  direction: ltr;
+}
+
+/* ===== 滚动条隐藏 ===== */
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 保持 body 原始样式，不要覆盖 */
+body {
+  overflow: hidden; /* 防止双重滚动条 */
+}
