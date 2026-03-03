@@ -51,7 +51,7 @@
   padding: 1rem 1.2rem;
   background: var(--primary-soft);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   user-select: none;
 }
 
@@ -87,7 +87,7 @@
   justify-content: center;
   color: var(--primary);
   font-size: 1rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .academy-foldable-header.active .academy-foldable-icon {
@@ -97,7 +97,7 @@
 .academy-foldable-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.8s ease;
   background: var(--card-bg);
 }
 

@@ -311,27 +311,70 @@
 }
 
 .profile-download {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 1rem;
   width: 100%;
 }
 
 .download-btn {
+  flex: 1; /* 两个按钮平分宽度 */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  width: 100%;
   padding: 0.8rem;
   background: var(--primary);
   color: white;
   text-decoration: none;
   border-radius: var(--radius-full);
   font-weight: 500;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+  white-space: nowrap; /* 防止文字换行 */
 }
 
 .download-btn:hover {
   background: var(--primary-deep);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.download-btn i {
+  font-size: 1rem;
+}
+
+.download-info {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin-top: 0.5rem;
+}
+
+/* 响应式：在小屏幕上改为上下排列 */
+@media (max-width: 768px) {
+  .download-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* 夜间模式适配 */
+[data-theme="dark"] .download-btn {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+[data-theme="dark"] .download-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
 }

@@ -8,7 +8,7 @@
 .profile-card-modern {
   background: var(--card-bg);
   border-radius: var(--radius-xl); /* 改为与右侧卡片相同的大圆角 */
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 0.2rem; /*上 左右 下*/
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
   transition:
@@ -121,4 +121,62 @@
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
+}
+
+/* ===== 简历下载按钮样式 ===== */
+.profile-resume-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+  width: 100%;
+}
+
+.resume-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.5rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.resume-btn:hover {
+  background: var(--primary-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.resume-btn i {
+  font-size: 0.9rem;
+}
+
+/* 响应式：在小屏幕上改为上下排列 */
+@media (max-width: 480px) {
+  .profile-resume-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .resume-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+/* 夜间模式适配 */
+[data-theme="dark"] .resume-btn {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+[data-theme="dark"] .resume-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
 }
