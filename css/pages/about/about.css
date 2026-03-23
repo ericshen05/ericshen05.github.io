@@ -1,17 +1,18 @@
-/* ===== 关于页面 - 全屏宽布局 ===== */
+/* ===== 关于页面 - 全屏无滚动，内容居中 ===== */
 .about-container {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
-  position: fixed;
-  overflow-x: hidden;
+  position: relative;
+  overflow: hidden; /* 完全禁止滚动 */
   background: linear-gradient(
     135deg,
     var(--bg-light) 0%,
     var(--primary-soft) 100%
   );
-  padding: 2rem 4rem 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 /* ===== 几何粒子背景 ===== */
@@ -271,20 +272,27 @@
   animation: breatheAndMove 18s ease-in-out infinite;
 }
 
-/* ===== 内容包装器 ===== */
+/* ===== 内容包装器 - 垂直居中 ===== */
 .about-content-wrapper {
-  /* position: relative; */
+  position: relative;
   z-index: 1;
-  flex: 0.2;
-  margin: 0.5rem auto;
+  flex: 1;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 4rem;
+  min-height: 0;
 }
 
 /* ===== 主要内容区域 ===== */
 .about-content {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
-  max-width: 1600px;
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -293,10 +301,11 @@
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-xl);
-  padding: 2rem 2.5rem;
+  padding: 1.8rem 2rem;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
   position: relative;
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 
@@ -325,30 +334,27 @@
     rgba(255, 255, 255, 0.5)
   );
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .team-logo-badge {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .team-logo-badge-image {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px; /* 方形圆角，区别于头像的圆形 */
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
   object-fit: cover;
-  /* border: 2px solid var(--primary); */
   box-shadow: 0 8px 20px rgba(106, 140, 255, 0.3);
   background: white;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .team-logo-badge:hover .team-logo-badge-image {
@@ -360,7 +366,7 @@
 }
 
 .team-badge-name {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--primary-deep);
   margin-bottom: 0.2rem;
@@ -369,55 +375,24 @@
 }
 
 .team-badge-sub {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.team-header {
-  margin-bottom: 2rem;
-  padding-left: 0.5rem;
-}
-
-.section-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--primary);
-  text-transform: uppercase;
-  background: var(--primary-soft);
-  padding: 0.2rem 1rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 1rem;
-}
-
-.team-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-
-.team-subtitle {
-  font-size: 1rem;
-  color: var(--text-secondary);
-}
-
-/* 团队成员网格 - 保持不变，但微调间距 */
+/* 团队成员网格 */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
 }
 
 .team-member {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
-  padding: 1.5rem 1.2rem;
+  padding: 2.6rem 0.8rem;
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid var(--border-light);
@@ -425,16 +400,16 @@
 }
 
 .team-member:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   border-color: var(--primary);
   box-shadow: var(--shadow-lg);
 }
 
 .member-avatar {
   position: relative;
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 1rem;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 1.6rem;
 }
 
 .member-avatar img {
@@ -442,7 +417,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--primary);
+  border: 2px solid var(--primary);
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 }
@@ -458,26 +433,27 @@
   transform: translateX(-50%);
   background: var(--primary);
   color: white;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 500;
-  padding: 0.2rem 0.8rem;
+  padding: 0.2rem 0.7rem;
   border-radius: var(--radius-full);
   white-space: nowrap;
   box-shadow: 0 4px 8px rgba(106, 140, 255, 0.3);
 }
 
 .member-name {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.8;
 }
 
 .member-bio {
   font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
 }
 
 .member-social {
@@ -487,8 +463,8 @@
 }
 
 .member-social-link {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--primary-soft);
   color: var(--primary);
@@ -496,73 +472,25 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
-  text-decoration: none; /* 移除下划线 */
+  font-size: 0.85rem;
+  text-decoration: none;
 }
 
 .member-social-link:hover {
   background: var(--primary);
   color: white;
-  transform: translateY(-3px);
-}
-
-/* ===== 右侧：简介信息 ===== */
-.about-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.info-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-}
-
-.card-title-with-icon {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--primary-soft);
-  padding-bottom: 0.8rem;
-}
-
-.card-title-with-icon i {
-  color: var(--primary);
-}
-
-/* 关于描述 */
-.about-description {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  /* margin-bottom: 1.5rem; */
-}
-
-.about-description p {
-  margin-bottom: 1rem;
+  transform: translateY(-2px);
 }
 
 .about-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .tech-badge {
-  padding: 0.3rem 0.8rem;
+  padding: 0.6rem 0.8rem;
   background: var(--primary-soft);
   color: var(--primary-deep);
   border-radius: var(--radius-full);
@@ -578,65 +506,89 @@
   transform: translateY(-2px);
 }
 
+/* ===== 右侧：简介信息 ===== */
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.8rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+.card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--primary-soft);
+  padding-bottom: 0.6rem;
+}
+
+.card-title-with-icon i {
+  color: var(--primary);
+}
+
+/* 关于描述 */
+.about-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.about-description p {
+  margin-bottom: 0.8rem;
+}
+
+.about-description p:last-child {
+  margin-bottom: 0;
+}
+
 /* 联系方法 */
 .contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.8rem;
 }
 
 .contact-method {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.8rem 1rem;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
   background: var(--card-bg);
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   text-decoration: none;
   transition: all 0.3s ease;
   border: 1px solid var(--border-light);
+  font-size: 0.85rem;
 }
 
 .contact-method:hover {
   background: var(--primary);
   color: white;
-  transform: translateX(8px);
+  transform: translateX(5px);
 }
 
 .contact-method i {
   width: 20px;
-  font-size: 1.1rem;
-}
-
-.contact-note {
-  font-size: 0.8rem;
-  color: var(--text-soft);
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-@keyframes heartbeat {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.05);
-  }
-}
-
-.thanks-message p {
   font-size: 1rem;
-  color: var(--text-primary);
-  font-weight: 500;
 }
 
 /* ===== 版权信息 - 页脚 ===== */
@@ -644,86 +596,19 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  /* margin-top: 1rem;
-  padding-top: 1rem; */
+  padding: 0.6rem 0 0.8rem;
+  flex-shrink: 0;
 }
 
 .copyright-text-footer {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.copyright-link {
-  color: var(--primary);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--primary);
-}
-
-.copyright-link:hover {
-  color: var(--primary-deep);
+  margin-bottom: 0.2rem;
 }
 
 .copyright-small-footer {
-  font-size: 0.8rem;
-  color: var(--text-soft);
-}
-
-.copyright-small-footer i {
   font-size: 0.7rem;
-}
-
-/* 夜间模式适配 */
-[data-theme="dark"] .about-team,
-[data-theme="dark"] .info-card {
-  background: rgba(26, 31, 48, 0.8);
-}
-
-[data-theme="dark"] .team-member {
-  background: var(--card-bg);
-}
-
-[data-theme="dark"] .team-logo {
-  background: rgba(26, 31, 48, 0.6);
-}
-
-/* 响应式 */
-@media (max-width: 1200px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .about-container {
-    padding: calc(70px + 2rem) 2rem 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .team-philosophy {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .about-container {
-    padding: calc(70px + 1rem) 1rem 1rem;
-  }
-
-  .team-title {
-    font-size: 2rem;
-  }
-
-  .team-logo {
-    padding: 0.8rem 1.5rem;
-  }
-
-  .logo-text {
-    font-size: 1.4rem;
-  }
+  color: var(--text-soft);
 }
 
 /* ===== 夜间模式适配 ===== */
@@ -747,7 +632,6 @@
     rgba(42, 47, 77, 0.8),
     rgba(26, 31, 48, 0.5)
   );
-  border-color: var(--border-light);
 }
 
 [data-theme="dark"] .team-logo-badge-image {
@@ -760,24 +644,6 @@
 }
 
 [data-theme="dark"] .team-badge-sub {
-  color: var(--text-secondary);
-}
-
-[data-theme="dark"] .team-badge-slogan {
-  color: var(--primary-light);
-  border-top-color: var(--border-light);
-}
-
-[data-theme="dark"] .section-tag {
-  background: var(--primary-soft);
-  color: var(--primary-light);
-}
-
-[data-theme="dark"] .team-title {
-  color: var(--text-primary);
-}
-
-[data-theme="dark"] .team-subtitle {
   color: var(--text-secondary);
 }
 
@@ -806,26 +672,6 @@
 [data-theme="dark"] .member-social-link:hover {
   background: var(--primary-light);
   color: var(--bg-dark);
-}
-
-[data-theme="dark"] .philosophy-item {
-  background: rgba(26, 31, 48, 0.5);
-}
-
-[data-theme="dark"] .philosophy-item:hover {
-  background: var(--primary-soft);
-}
-
-[data-theme="dark"] .philosophy-item i {
-  color: var(--primary-light);
-}
-
-[data-theme="dark"] .philosophy-item h4 {
-  color: var(--text-primary);
-}
-
-[data-theme="dark"] .philosophy-item p {
-  color: var(--text-soft);
 }
 
 [data-theme="dark"] .card-title-with-icon {
@@ -862,18 +708,6 @@
   color: var(--bg-dark);
 }
 
-[data-theme="dark"] .contact-note {
-  color: var(--text-soft);
-}
-
-[data-theme="dark"] .thanks-message {
-  background: linear-gradient(135deg, var(--primary-soft), transparent);
-}
-
-[data-theme="dark"] .thanks-message p {
-  color: var(--text-primary);
-}
-
 /* 粒子背景夜间模式适配 */
 [data-theme="dark"] .circle-particle {
   background: radial-gradient(
@@ -881,51 +715,183 @@
     rgba(124, 156, 255, 0.4),
     rgba(90, 122, 224, 0.15)
   );
-  box-shadow: 0 0 30px rgba(124, 156, 255, 0.2);
 }
 
 [data-theme="dark"] .triangle-particle {
   border-bottom-color: rgba(124, 156, 255, 0.3);
-  filter: drop-shadow(0 0 20px rgba(124, 156, 255, 0.15));
 }
 
 [data-theme="dark"] .square-particle {
   background: rgba(90, 122, 224, 0.25);
-  box-shadow: 0 0 30px rgba(90, 122, 224, 0.15);
-}
-
-[data-theme="dark"] .diamond-particle {
-  background: rgba(124, 156, 255, 0.25);
-  box-shadow: 0 0 30px rgba(124, 156, 255, 0.15);
-}
-
-[data-theme="dark"] .hexagon-particle {
-  background: rgba(106, 140, 255, 0.2);
-  box-shadow: 0 0 30px rgba(106, 140, 255, 0.15);
-}
-
-/* 版权信息夜间模式适配 */
-[data-theme="dark"] .copyright-line {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--primary-light),
-    transparent
-  );
 }
 
 [data-theme="dark"] .copyright-text-footer {
   color: var(--text-secondary);
 }
 
-[data-theme="dark"] .copyright-link {
-  color: var(--primary-light);
-}
-
-[data-theme="dark"] .copyright-link:hover {
-  color: var(--primary);
-}
-
 [data-theme="dark"] .copyright-small-footer {
   color: var(--text-soft);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1200px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 700px;
+  }
+
+  .about-content-wrapper {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content-wrapper {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .team-card-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .team-logo-badge-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .team-badge-name {
+    font-size: 1.2rem;
+  }
+
+  .about-team {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .info-card {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content-wrapper {
+    padding: 0.5rem 1rem;
+  }
+
+  .team-logo-badge {
+    gap: 0.8rem;
+  }
+
+  .team-logo-badge-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .team-badge-name {
+    font-size: 1rem;
+  }
+
+  .team-badge-sub {
+    font-size: 0.65rem;
+  }
+
+  .member-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .member-name {
+    font-size: 0.85rem;
+  }
+
+  .card-title-with-icon {
+    font-size: 1rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-height: 700px) {
+  .about-content-wrapper {
+    padding: 0.5rem 4rem;
+  }
+
+  .team-card-header {
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .team-grid {
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .team-member {
+    padding: 0.8rem 0.6rem;
+  }
+
+  .member-avatar {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.2rem;
+  }
+
+  .member-role {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.6rem;
+    bottom: -8px;
+  }
+
+  .member-name {
+    font-size: 0.8rem;
+  }
+
+  .member-bio {
+    font-size: 0.8rem;
+  }
+
+  .info-card {
+    padding: 1rem 1.5rem;
+  }
+
+  .card-title-with-icon {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .about-description {
+    font-size: 1 rem;
+    line-height: 1.5;
+  }
+}
+
+/* 导航栏补偿 - 如果导航栏是固定定位 */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 防止 body 滚动 */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: var(--bg-light);
+  backdrop-filter: blur(10px);
+}
+
+.about-container {
+  padding-top: 70px; /* 导航栏高度补偿 */
+  height: 100vh;
+  box-sizing: border-box;
 }
