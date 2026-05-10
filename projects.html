@@ -24,11 +24,6 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
     <!-- CSS文件 -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/pages/projects/style.css" />
@@ -80,9 +75,116 @@
         </div>
       </div>
 
-      <!-- 项目1 -->
-      <section class="project-section" id="project1" data-index="0">
+      <!-- 项目 1 · 数学建模：左图右文 -->
+      <section class="project-section" id="project2" data-index="0">
         <div class="project-content">
+          <div class="project-media">
+            <div class="media-container carousel">
+              <!-- 轮播图片列表 -->
+              <div class="carousel-track" id="carousel2">
+                <div class="carousel-slide">
+                  <img
+                    src="images/project2/pj2_4.png"
+                    alt="建模论文1"
+                    class="model1"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="images/project2/pj2_3.png"
+                    alt="建模论文2"
+                    class="model2"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="images/project2/pj2_2.png"
+                    alt="建模论文3"
+                    class="model3"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="images/project2/pj2_1.png"
+                    alt="建模论文4"
+                    class="model4"
+                  />
+                </div>
+              </div>
+              <!-- 轮播指示点 -->
+              <div class="carousel-dots" data-carousel="carousel2">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+              </div>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="detail-header">
+              <span class="project-number">01</span>
+              <span class="project-category">数据可视化</span>
+            </div>
+            <h2 class="project-title">数学模型建立与求解举例</h2>
+            <div class="project-description">
+              <p>
+                数学建模是每个数学系学生都必须掌握的本领，通过对生活实际的问题进行数学建模，<strong>建模和求解</strong>过程中常常接触各种领域的知识并需要与其他领域的同学合作，这是数学原理应用于生产生活最直观的体现。
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag">数学模型</span>
+              <span class="tag">数据分析</span>
+              <span class="tag">机器学习/深度学习</span>
+            </div>
+            <div class="project-links">
+              <!-- <a href="#" class="btn-primary" target="_blank">
+                <i class="fas fa-eye"></i> 点击查看
+              </a> -->
+              <a href="pages/projects/project2.html" class="btn-primary">
+                <i class="fas fa-eye"></i> 点击查看
+              </a>
+              <!-- <a href="#" class="btn-secondary" target="_blank">
+                <i class="fab fa-github"></i> 开源代码
+              </a> -->
+              <a
+                href="javascript:void(0);"
+                class="btn-icon copy-url-btn"
+                onclick="copyCurrentUrl(this)"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span class="copy-tooltip">已成功复制网址</span>
+              </a>
+            </div>
+            <div class="project-metrics">
+              <div class="metric-item">
+                <span class="metric-value">8</span>
+                <span class="metric-label">模型方法</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">2w+</span>
+                <span class="metric-label">代码总量</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">20+</span>
+                <span class="metric-label">论文图表</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 下滑指引 -->
+        <div class="scroll-indicator">
+          <span class="scroll-text">向下滑动</span>
+          <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down second"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- 项目 2 · 语义通信：左文右图（reverse） -->
+      <section class="project-section" id="project1" data-index="1">
+        <div class="project-content reverse">
           <div class="project-media">
             <div class="media-container carousel">
               <!-- 轮播图片列表 -->
@@ -128,7 +230,7 @@
           </div>
           <div class="project-details">
             <div class="detail-header">
-              <span class="project-number">01</span>
+              <span class="project-number">02</span>
               <span class="project-category">系统设计</span>
             </div>
             <h2 class="project-title">语义通信与安全识别系统</h2>
@@ -147,9 +249,8 @@
                 <i class="fas fa-eye"></i> 点击查看
               </a>
                -->
-              <a href="javascript:void(0);" class="btn-primary" id="tiperror">
+              <a href="pages/projects/project1.html" class="btn-primary">
                 <i class="fas fa-eye"></i> 点击查看
-                <span class="tooltip-err">暂未开放</span>
               </a>
               <a href="" class="btn-secondary">
                 <i class="fab fa-github"></i> 开源代码
@@ -165,116 +266,16 @@
             </div>
             <div class="project-metrics">
               <div class="metric-item">
-                <span class="metric-value">30%</span>
-                <span class="metric-label">效率提升</span>
+                <span class="metric-value">1</span>
+                <span class="metric-label">软件著作</span>
               </div>
               <div class="metric-item">
-                <span class="metric-value">12</span>
+                <span class="metric-value">12+</span>
                 <span class="metric-label">组件数量</span>
               </div>
               <div class="metric-item">
                 <span class="metric-value">3</span>
-                <span class="metric-label">身份模式</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 下滑指引 -->
-        <div class="scroll-indicator">
-          <span class="scroll-text">向下滑动</span>
-          <div class="scroll-arrow">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-chevron-down second"></i>
-          </div>
-        </div>
-      </section>
-
-      <!-- 项目2 -->
-      <section class="project-section" id="project2" data-index="1">
-        <div class="project-content reverse">
-          <div class="project-media">
-            <div class="media-container carousel">
-              <!-- 轮播图片列表 -->
-              <div class="carousel-track" id="carousel2">
-                <div class="carousel-slide">
-                  <img
-                    src="images/project2/pj2_1.png"
-                    alt="建模论文1"
-                    class="model1"
-                  />
-                </div>
-                <div class="carousel-slide">
-                  <img
-                    src="images/project2/pj2_2.png"
-                    alt="建模论文2"
-                    class="model2"
-                  />
-                </div>
-                <div class="carousel-slide">
-                  <img
-                    src="images/project2/pj2_3.png"
-                    alt="建模论文3"
-                    class="model3"
-                  />
-                </div>
-              </div>
-              <!-- 轮播指示点 -->
-              <div class="carousel-dots" data-carousel="carousel2">
-                <span class="dot" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-              </div>
-            </div>
-          </div>
-          <div class="project-details">
-            <div class="detail-header">
-              <span class="project-number">02</span>
-              <span class="project-category">数据可视化</span>
-            </div>
-            <h2 class="project-title">数学模型建立与求解举例</h2>
-            <div class="project-description">
-              <p>
-                数学建模是每个数学系学生都必须掌握的本领，通过对生活实际的问题进行数学建模，<strong>建模和求解</strong>过程中常常接触各种领域的知识并需要与其他领域的同学合作，这是数学原理应用于生产生活最直观的体现。
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag">数学模型</span>
-              <span class="tag">数据分析</span>
-              <span class="tag">机器学习/深度学习</span>
-            </div>
-            <div class="project-links">
-              <!-- <a href="#" class="btn-primary" target="_blank">
-                <i class="fas fa-eye"></i> 点击查看
-              </a> -->
-              <a href="javascript:void(0);" class="btn-primary" id="tiperror">
-                <i class="fas fa-eye"></i> 点击查看
-                <span class="tooltip-err">暂未开放</span>
-              </a>
-              <!-- <a href="#" class="btn-secondary" target="_blank">
-                <i class="fab fa-github"></i> 开源代码
-              </a> -->
-              <a
-                href="javascript:void(0);"
-                class="btn-icon copy-url-btn"
-                onclick="copyCurrentUrl(this)"
-              >
-                <i class="fas fa-external-link-alt"></i>
-                <span class="copy-tooltip">已成功复制网址</span>
-              </a>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-value">8</span>
-                <span class="metric-label">模型方法</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-value">2w+</span>
-                <span class="metric-label">代码总量</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-value">20+</span>
-                <span class="metric-label">论文图表</span>
+                <span class="metric-label">系统身份</span>
               </div>
             </div>
           </div>
@@ -338,9 +339,8 @@
               <span class="tag">在线网站</span>
             </div>
             <div class="project-links">
-              <a href="javascript:void(0);" class="btn-primary" id="tiperror">
+              <a href="pages/projects/project3.html" class="btn-primary">
                 <i class="fas fa-eye"></i> 在线浏览
-                <span class="tooltip-err">暂未开放</span>
               </a>
               <a
                 href="javascript:void(0);"
@@ -357,11 +357,11 @@
                 <span class="metric-label">章节全覆盖</span>
               </div>
               <div class="metric-item">
-                <span class="metric-value">360+</span>
+                <span class="metric-value">500+</span>
                 <span class="metric-label">全部页数</span>
               </div>
               <div class="metric-item">
-                <span class="metric-value">80,000+</span>
+                <span class="metric-value">100,000+</span>
                 <span class="metric-label">总字数</span>
               </div>
             </div>
@@ -447,11 +447,11 @@
                 <div class="copyright-detail">
                   <div class="copyright-item">
                     <i class="fas fa-code"></i>
-                    <span>v1.0</span>
+                    <span>v1.2</span>
                   </div>
                   <div class="copyright-item">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>2026.02</span>
+                    <span>2026.05</span>
                   </div>
                   <div class="copyright-item">
                     <i class="fa-solid fa-user-group"></i>

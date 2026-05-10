@@ -32,11 +32,14 @@ function copyCurrentUrl(btn) {
     });
 }
 
-document.getElementById("tiperror").addEventListener("click", function () {
-  let tooltip = this.querySelector(".tooltip-err");
-  tooltip.classList.add("show");
+const tipErrorBtn = document.getElementById("tiperror");
+if (tipErrorBtn) {
+  tipErrorBtn.addEventListener("click", function () {
+    let tooltip = this.querySelector(".tooltip-err");
+    tooltip.classList.add("show");
 
-  setTimeout(function () {
-    tooltip.classList.remove("show");
-  }, 2000);
-});
+    setTimeout(function () {
+      tooltip.classList.remove("show");
+    }, 2000);
+  });
+}

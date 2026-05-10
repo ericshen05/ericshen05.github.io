@@ -59,8 +59,11 @@
   transition: var(--transition-smooth);
 }
 
+/* 与默认 .project-content 相同列宽配比：宽列 1.2fr / 窄列 0.8fr。
+   rtl 下首列贴在行尾，故视觉顺序为「左窄文 0.8fr · 右宽图 1.2fr」，
+   与下方非 reverse 区块「左宽图 · 右窄文」互为镜像 */
 .project-content.reverse {
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1.2fr 0.8fr;
   direction: rtl;
 }
 

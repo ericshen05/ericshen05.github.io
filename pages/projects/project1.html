@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>项目详情 - 语义通信与安全识别系统</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/efficientim.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/pages/projects/detail/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="dot"></span>
+          <span>个人简历</span>
+        </div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../projects.html" class="active">项目</a>
+            <a href="../../about.html">关于</a>
+          </div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="切换夜间/日间模式"
+          >
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="project-detail-main">
+      <article class="detail-card">
+        <div class="detail-header">
+          <span class="detail-index">项目 02 · 系统设计</span>
+        </div>
+        <h1 class="detail-title">面向无人机低空物流的语义安全通信系统设计</h1>
+        <div class="detail-top-actions">
+          <a
+            href="../../创新训练项目-网络空间安全学院-黄靖-暨南大学大学生创新创业训练计划项目申报书.docx"
+            class="detail-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fas fa-file-word"></i> 查看项目申报书</a
+          >
+          <a
+            href="https://github.com/"
+            class="detail-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-github"></i> GitHub 源码</a
+          >
+        </div>
+        <p class="detail-intro">
+          项目立足低空经济与无人机物流场景，针对通信效率低、数据安全保障不足两类核心痛点，
+          构建语义信息提取、安全编码传输与边缘计算协同优化的一体化系统。依托昇腾AI硬件平台，
+          在无人机与地面控制中心之间实现更低时延、更高稳健性、更强抗攻击能力的语义通信链路。
+        </p>
+        <p class="detail-intro">
+          城市高密度飞行带来的信道拥塞、偏远区域链路不稳定带来的控制滞后，以及物流数据在传输过程中的窃听、
+          篡改和未授权访问风险。项目方案强调“先理解后传输”的语义通信范式，以更少的数据传输完成更可靠的任务表达。
+        </p>
+
+        <div class="detail-grid">
+          <section class="detail-block">
+            <h3>核心目标</h3>
+            <ul>
+              <li>面向无人机物流多模态数据，降低通信负载与端到端时延。</li>
+              <li>保障语义信息在无线链路中的机密性、完整性与可用性。</li>
+              <li>基于昇腾AI实现边缘侧实时推理与异常检测能力落地。</li>
+            </ul>
+          </section>
+          <section class="detail-block">
+            <h3>主要研究内容</h3>
+            <ul>
+              <li>上下文语义特征提取与恢复：减少图像/文本传输冗余。</li>
+              <li>
+                语义信息安全编码传输：采用DeepJSCEC提升抗干扰与抗窃听能力。
+              </li>
+              <li>
+                边缘计算优化：结合TensorFlow Lite与MobileNetV3提升响应速度。
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <section class="detail-section">
+          <h2>项目背景与问题定义</h2>
+          <p>
+            在低空经济快速发展背景下，无人机物流已成为城市即时配送、偏远地区物资运输与应急投送的重要基础能力。
+            但传统“逐比特传输”的通信方式在无人机高并发运行场景中容易出现带宽紧张、传输时延升高、关键控制信息延迟到达等问题，
+            直接影响飞行安全与任务时效。
+          </p>
+          <p>
+            同时，物流链路中包含用户地址、联系方式、任务路径、签收记录等敏感信息，若缺乏语义层的安全保护机制，
+            即使链路可用也难以保证数据可信。本项目因此提出“语义压缩 + 安全编码 +
+            边缘推理”的联合优化路线，
+            以通信效率和数据安全双目标为牵引进行系统设计。
+          </p>
+        </section>
+
+        <section class="detail-section">
+          <h2>技术路线图</h2>
+          <div class="diagram-grid">
+            <div class="diagram-node">政策与场景需求分析</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">关键问题拆解（时延/安全/算力）</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">三大核心模块设计</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">系统集成与多场景测试</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">性能评估与迭代优化</div>
+          </div>
+          <div class="diagram-note">
+            三大核心模块包括：①上下文语义特征提取与恢复；②语义信息安全编码传输（DeepJSCEC）；
+            ③基于昇腾AI的边缘计算优化。
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <h2>系统任务</h2>
+          <div class="flow-list">
+            <div class="flow-item">
+              <span class="flow-step">01</span>
+              <div>
+                <h4>任务下发与多模态采集</h4>
+                <p>地面站下发文本指令，无人机同步采集图像/视频/传感器数据。</p>
+              </div>
+            </div>
+            <div class="flow-item">
+              <span class="flow-step">02</span>
+              <div>
+                <h4>语义特征提取与压缩</h4>
+                <p>通过Transformer/CNN等模型提炼关键语义，剔除冗余信息。</p>
+              </div>
+            </div>
+            <div class="flow-item">
+              <span class="flow-step">03</span>
+              <div>
+                <h4>安全编码与无线传输</h4>
+                <p>
+                  采用DeepJSCEC进行语义层加密与纠错，提升抗干扰与抗窃听能力。
+                </p>
+              </div>
+            </div>
+            <div class="flow-item">
+              <span class="flow-step">04</span>
+              <div>
+                <h4>边缘解码与昇腾推理</h4>
+                <p>
+                  在昇腾平台完成语义恢复、状态识别与异常检测，支持快速响应。
+                </p>
+              </div>
+            </div>
+            <div class="flow-item">
+              <span class="flow-step">05</span>
+              <div>
+                <h4>控制回传与闭环优化</h4>
+                <p>
+                  控制决策回传无人机，依据链路质量与任务优先级动态调整资源。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="detail-actions detail-actions-floating">
+          <a href="../../projects.html" class="detail-btn primary"
+            ><i class="fas fa-arrow-left"></i> 返回</a
+          >
+        </div>
+      </article>
+    </main>
+
+    <script src="../../js/pages/main.js"></script>
+  </body>
+</html>

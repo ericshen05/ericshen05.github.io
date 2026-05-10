@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initFullScreenScroll();
   initProgressIndicators();
   initNavigationArrows();
+  initScrollIndicators();
+  initCarousels();
 });
 
 function initFullScreenScroll() {
@@ -38,8 +40,6 @@ function initFullScreenScroll() {
 function initProgressIndicators() {
   const progressDots = document.querySelectorAll(".progress-dot");
   const container = document.querySelector(".projects-container");
-  const sections = document.querySelectorAll(".project-section");
-
   if (!progressDots.length || !container) return;
 
   progressDots.forEach((dot, index) => {
@@ -167,14 +167,6 @@ function initScrollIndicators() {
   });
 }
 
-// 在 DOMContentLoaded 中调用
-document.addEventListener("DOMContentLoaded", () => {
-  initFullScreenScroll();
-  initProgressIndicators();
-  initNavigationArrows();
-  initScrollIndicators(); // 新增
-});
-
 /**
  * 初始化轮播图功能
  */
@@ -265,11 +257,3 @@ function initCarousels() {
   });
 }
 
-// 在 DOMContentLoaded 中调用
-document.addEventListener("DOMContentLoaded", () => {
-  initFullScreenScroll();
-  initProgressIndicators();
-  initNavigationArrows();
-  initScrollIndicators();
-  initCarousels(); // 新增
-});

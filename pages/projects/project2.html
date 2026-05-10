@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>项目详情 · 数学建模</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/efficientim.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/pages/projects/detail/style.css" />
+    <link rel="stylesheet" href="../../css/pages/projects/project2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="p2-page">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="dot"></span>
+          <span>个人简历</span>
+        </div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../projects.html" class="active">项目</a>
+            <a href="../../about.html">关于</a>
+          </div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="切换夜间/日间模式"
+          >
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="p2-hero">
+      <div class="p2-badge-row">
+        <span class="p2-badge">Mathematical Modeling</span>
+        <span class="p2-badge">Machine Learning DL & RL</span>
+        <span class="p2-badge">Data Analysis</span>
+      </div>
+      <h1>数学模型建立与求解举例</h1>
+      <p class="p2-hero-lede">
+        以<strong>2025年亚太赛（APMCM）</strong>与<strong>2024年大湾区杯金融建模赛</strong>两次国家级/省级数学建模竞赛为例，展示数学模型建立与求解的参与过程。数学建模是利用数学知识对实际问题进行建模，并求解模型的过程。作为计算数学专业的学生，我在比赛过程中担任<strong>优化模型建立、优化数值求解、论文写作、模型分析与改进</strong>等工作。
+      </p>
+      <div class="p2-meta-chips">
+        <span class="p2-chip"
+          ><i class="fas fa-database"></i> 数据处理与清洗</span
+        >
+        <span class="p2-chip"
+          ><i class="fas fa-project-diagram"></i> 数值求解、深度学习模型</span
+        >
+        <span class="p2-chip"
+          ><i class="fas fa-chart-line"></i> 模型优化与改进分析</span
+        >
+      </div>
+    </header>
+
+    <div class="p2-tabs-wrap">
+      <div class="p2-tabs" role="tablist" aria-label="论文切换">
+        <button
+          type="button"
+          class="p2-tab active"
+          data-panel="panel-apmcm"
+          role="tab"
+          aria-selected="true"
+        >
+          论文一 · 2025 APMCM
+          <small>互惠关税的全球贸易与经济冲击评估</small>
+        </button>
+        <button
+          type="button"
+          class="p2-tab"
+          data-panel="panel-gbc"
+          role="tab"
+          aria-selected="false"
+        >
+          论文二 · 2024 大湾区杯
+          <small>沪深300 / Logistic 系统性风险建模</small>
+        </button>
+      </div>
+    </div>
+
+    <div class="p2-panels">
+      <!-- ========== Panel 1: APMCM ========== -->
+      <section id="panel-apmcm" class="p2-panel active" role="tabpanel">
+        <article class="p2-card reveal">
+          <div class="p2-card-head">
+            <h2>题目背景与分析框架</h2>
+            <span class="p2-anchor-tag">2025 APMCM · Problem C · Tariff</span>
+          </div>
+          <p
+            style="
+              margin: 0 0 16px;
+              color: var(--text-secondary);
+              line-height: 1.85;
+            "
+          >
+            围绕美国 2025 年 4 月前后推出的“互惠关税”框架，
+            对全球贸易流量再分配、产业链替代与宏观冲击传导进行分析。按照
+            <strong>问题重述</strong
+            >、<strong>数据收集与预处理</strong>、<strong>建模与求解</strong>、<strong>结果分析与改进</strong>的逻辑顺序推进。
+          </p>
+          <div class="p2-downloads">
+            <a
+              href="../../assets/documents/mathmodel/SOLUTION_to_2025APMCM_C_Tariff%20Policy.pdf"
+              class="p2-download primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-file-pdf"></i> 竞赛论文完整 PDF
+            </a>
+            <a href="../../projects.html" class="p2-download"
+              ><i class="fas fa-th-large"></i> 返回项目</a
+            >
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-1 p2-abstract-card">
+          <div class="p2-card-head">
+            <h2>摘要</h2>
+          </div>
+
+          <div class="p2-abstract-body p2-abstract-en" lang="en">
+            <p class="p2-abstract-lang-label">Abstract</p>
+            <p>
+              This study provides a comprehensive quantitative assessment of the
+              multi-dimensional impacts of the U.S. &quot;reciprocal
+              tariff&quot; policy implemented in <strong>April 2025</strong> on
+              <strong>global trade flows</strong> and
+              <strong>regional economic landscapes</strong>. Utilizing a suite
+              of <strong>mathematical and econometric models</strong>, the
+              research analyzes <strong>sector-specific</strong> and
+              <strong>macroeconomic</strong> effects across different countries
+              and industries.
+            </p>
+            <p>
+              In response to Question 1, we employed a
+              <strong>Dirichlet Regression Model</strong> to analyze the trade
+              share of <strong>soybean imports to China</strong> from the U.S.,
+              Brazil, and Argentina. The model effectively captured the
+              significant shift in market share following the tariff policy and
+              China&apos;s retaliatory measures, predicting a long-term
+              equilibrium where
+              <strong>U.S. market share diminishes to zero</strong> while Brazil
+              and Argentina stabilize at approximately <strong>55%</strong> and
+              <strong>45%</strong> respectively.
+            </p>
+            <p>
+              For Question 2, a <strong>Multivariate Logit Model</strong> was
+              constructed to analyze the market share of Japanese automobiles in
+              the U.S. across three channels: <strong>direct exports</strong>,
+              <strong>U.S. production</strong>, and
+              <strong>third-country production</strong>. This model quantifies
+              how tariff adjustments drive a strategic shift toward
+              <strong>localized production</strong>, increasing it to
+              approximately <strong>115%</strong> of its original level, thereby
+              explaining change in the
+              <strong>US-Japan automobile trade structure</strong>.
+            </p>
+            <p>
+              In addressing Question 3, an
+              <strong>Interrupted Time Series (ITS)</strong> model combined with
+              a <strong>SARIMAX</strong> model evaluated the impact of U.S.
+              tariff policies on the
+              <strong>semiconductor manufacturing industry and trade</strong>.
+              Results showed differentiated effects on
+              <strong>high-end</strong>, <strong>mid-range</strong>, and
+              <strong>low-end chips</strong>, highlighting trade-offs between
+              <strong>economic efficiency</strong> and
+              <strong>national security</strong>.
+            </p>
+            <p>
+              Regarding Question 4, a
+              <strong>Holt-Winters exponential smoothing</strong> model,
+              enhanced with <strong>piecewise elasticity adjustment</strong>,
+              was developed to forecast <strong>U.S. import volumes</strong> and
+              <strong>tariff revenues</strong>. Predictions indicate
+              <strong>tariff revenue surges in the short term</strong>, followed
+              by a medium-term decline of approximately <strong>20%</strong> of
+              the short-term peak due to declining import volumes—supporting
+              analysis of
+              <strong>net fiscal impact over the following two years</strong>.
+            </p>
+            <p>
+              Finally, for Question 5, a <strong>VARX model</strong> and
+              <strong>dynamic equations</strong> simulated the
+              <strong>short- and medium-term</strong> impacts of tariff
+              adjustments on the U.S. economy. Key financial and industrial
+              indicators assess <strong>manufacturing reshoring</strong>; the
+              study concludes the
+              <strong>protective effect is short-lived</strong> and
+              <strong>insufficient for sustainable industrial recovery</strong>.
+            </p>
+            <p>
+              Model strengths and limitations are evaluated, with suggestions
+              for improvement. Findings show that while the policy yields
+              <strong>short-term fiscal and protective benefits</strong>, its
+              <strong>long-term structural costs</strong> are substantial,
+              <strong>undermining global supply chains</strong> and failing to
+              foster <strong>enduring manufacturing competitiveness</strong>.
+            </p>
+            <p class="p2-abstract-kw">
+              <strong>Keywords:</strong> Tariff Policy Impact, multivariate
+              logit model, time series analysis, Holt-Winters exponential
+              smoothing, VARX model
+            </p>
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-2">
+          <h3 class="p2-pipeline-title">求解思路</h3>
+          <div class="p2-pipeline">
+            <div class="p2-stage">
+              <span class="p2-stage-num">STEP 01</span>
+              <h3>问题结构</h3>
+              <p>
+                将世贸冲击分解为市场份额、产业结构调整、财政收入与宏观经济脉冲四条主线。
+              </p>
+            </div>
+            <div class="p2-stage">
+              <span class="p2-stage-num">STEP 02</span>
+              <h3>数据处理与变量构造</h3>
+              <p>
+                统一贸易流、汽车产业渠道、半导体分项与宏观经济序列的时间刻度与缺失策略。
+              </p>
+            </div>
+            <div class="p2-stage">
+              <span class="p2-stage-num">STEP 03</span>
+              <h3>建模与求解</h3>
+              <p>
+                按每个题目分别构建 Dirichlet / Logit / ITS / Holt-Winters / VARX
+                等模型并求解。
+              </p>
+            </div>
+            <div class="p2-stage">
+              <span class="p2-stage-num">STEP 04</span>
+              <h3>分析与总结</h3>
+              <p>
+                对每个题目的结果进行分析与总结，给出政策含义与模型可能的改进方向，并对结果进行合理解释。
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-3">
+          <div class="p2-card-head">
+            <h2>数据收集与预处理</h2>
+            <span class="p2-anchor-tag">Data wrangling</span>
+          </div>
+          <p
+            style="
+              margin: 0 0 12px;
+              color: var(--text-secondary);
+              line-height: 1.85;
+            "
+          >
+            改题目的特点是要针对每个小问收集不同数据并清洗，数据源异质性强。大宗商品贸易份额需要对<strong>多国出口结构</strong>做归一化处理；美日汽车则需要拆分为<strong
+              >直接对美出口 / 美国本土组装 / 第三国产能</strong
+            >三类渠道；半导体与宏观经济模块则要求在关税事件前后对齐<strong>政策断点与外生冲击窗口</strong>。
+          </p>
+          <ul
+            style="
+              margin: 0;
+              padding-left: 1.25rem;
+              color: var(--text-secondary);
+              line-height: 1.82;
+            "
+          >
+            <li>
+              对原始数据预处理：<strong>单位统一</strong>、汇率与通胀折算口径说明、异常值
+              Winsorize 备选方案。
+            </li>
+            <li>
+              以关税加权平均税率从约
+              <strong>2.44%</strong>（2025年初）跃升至<strong>逾 20%</strong
+              >的时间路径作为外生信息集的一部分对政策冲击刻画。
+            </li>
+            <li>
+              在多市场场景下<strong>构造 compositional 数据结构</strong
+              >，例如三国大豆出口份额之和恒为 1，为后续的 Dirichlet
+              回归奠定统计合法性。
+            </li>
+          </ul>
+          <blockquote class="p2-quote">
+            数据处理是Problem
+            C的第一个难点，实际比赛过程中在数据收集上花费了很多时间。数据预处理部分包括数据清洗、数据变换、数据标准化等，为了保证后面能达到建模的条件，必须慎重选择如何填补缺失值、处理量纲差异等问题。数据处理直接关系到建模求解后结果的含义，数据处理不当会造成结果无意义或不能给出合理的解释。
+          </blockquote>
+        </article>
+
+        <article class="p2-card reveal delay-4">
+          <div class="p2-card-head">
+            <h2>建模过程</h2>
+            <span class="p2-anchor-tag">Modeling</span>
+          </div>
+          <div class="p2-models">
+            <div class="p2-model open">
+              <div class="p2-model-head">
+                <strong
+                  >Problem 1 — 对华大豆进口的份额演进（Dirichlet 回归）</strong
+                >
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  将中国自美、巴西、阿根廷的大豆进口重新表述为<strong>单纯形上的相依份额</strong>，利用
+                  Dirichlet Regression
+                  捕获关税互惠与对华反制后的<strong>市场份额迁移</strong>。模型结果表明：美国路径份额存在向零收敛的压力，
+                  南美供应国获得结构性替代红利，在长期均衡场景中巴西与阿根廷约呈
+                  <strong>55% / 45%</strong>
+                  量级的稳定分割（摘要口径，详见 PDF 图表与灵敏度检验）。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} D_{\mathrm{policy}}(T) &amp;=
+                      \begin{cases} 1, &amp; T \text{ 在2025年4月及之后} \\ 0,
+                      &amp; T \text{ 在此之前} \end{cases} \\[0.6em]
+                      f(\mathbf{y}\mid X) &amp;=
+                      \frac{\Gamma(\alpha_1+\alpha_2+\alpha_3)}
+                      {\Gamma(\alpha_1)\Gamma(\alpha_2)\Gamma(\alpha_3)}\,
+                      y_1^{\alpha_1-1} y_2^{\alpha_2-1} y_3^{\alpha_3-1}, \quad
+                      \mathbf{y}=(y_1,y_2,y_3) \\ \alpha_i &amp;=
+                      \exp(X\boldsymbol{\beta}_i) \\[0.6em] \hat{s}_1(t) &amp;=
+                      0 \\ \hat{s}_2(t) &amp;= 0.55 +
+                      \bigl(\tilde{s}_2(t)-0.55\bigr)\,\mathrm{e}^{-0.5(t-10)}
+                      \\ \hat{s}_3(t) &amp;= 0.45 +
+                      \bigl(\tilde{s}_3(t)-0.45\bigr)\,\mathrm{e}^{-0.5(t-10)}
+                      \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% Problem 1 — Dirichlet + 均衡校正
+\begin{aligned}
+D_{\mathrm{policy}}(T) &amp;=
+\begin{cases}
+1, &amp; T \text{ 在2025年4月及之后} \\
+0, &amp; T \text{ 在此之前}
+\end{cases}
+\\[0.6em]
+f(\mathbf{y}\mid X) &amp;= \frac{\Gamma(\alpha_1+\alpha_2+\alpha_3)}
+{\Gamma(\alpha_1)\Gamma(\alpha_2)\Gamma(\alpha_3)}\,
+y_1^{\alpha_1-1} y_2^{\alpha_2-1} y_3^{\alpha_3-1},
+\quad \mathbf{y}=(y_1,y_2,y_3) \\
+\alpha_i &amp;= \exp(X\boldsymbol{\beta}_i)
+\\[0.6em]
+\hat{s}_1(t) &amp;= 0 \\
+\hat{s}_2(t) &amp;= 0.55 + \bigl(\tilde{s}_2(t)-0.55\bigr)\,\mathrm{e}^{-0.5(t-10)} \\
+\hat{s}_3(t) &amp;= 0.45 + \bigl(\tilde{s}_3(t)-0.45\bigr)\,\mathrm{e}^{-0.5(t-10)}
+\end{aligned}
+% 下标 1,2,3：美国、巴西、阿根廷；\tilde{s} 为校正前预测份额。</code></pre>
+                    </details>
+                  </div>
+                  <ul>
+                    <li>
+                      推断策略：相较独立 ARDL，Dirichlet
+                      结构显式考虑了份额之间的相关性。
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong
+                  >Problem 2 — 美日汽车贸易渠道（多元 Logit 份额模型）</strong
+                >
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  对美汽车市场份额按<strong
+                    >直接出口 · 本地化生产 · 第三国转出</strong
+                  >三维分解， Multivariate Logit
+                  框架量化关税敏感度与企业的<strong>本地化再布局激励</strong>。
+                  政策情景下本地化产能可上冲至<strong>相较基期约 +15%</strong>
+                  量级的结构化抬升（以论文估计为准），从而在解释层面桥接 Trade
+                  Policy ↔ FDI/In-house production。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} L_{1t} &amp;=
+                      \ln\frac{S_{\mathrm{export},t}}{S_{\mathrm{third},t}} =
+                      \beta_0 + \beta_1 D_t + \beta_2 E_t + \varepsilon_{1t} \\
+                      L_{2t} &amp;=
+                      \ln\frac{S_{\mathrm{us},t}}{S_{\mathrm{third},t}} =
+                      \gamma_0 + \gamma_1 D_t + \gamma_2 E_t + \varepsilon_{2t}
+                      \\[0.5em] S_{\mathrm{export},t} &amp;=
+                      \frac{\mathrm{e}^{L_{1t}}}{1+\mathrm{e}^{L_{1t}}+\mathrm{e}^{L_{2t}}},
+                      \quad S_{\mathrm{us},t} =
+                      \frac{\mathrm{e}^{L_{2t}}}{1+\mathrm{e}^{L_{1t}}+\mathrm{e}^{L_{2t}}},
+                      \quad S_{\mathrm{third},t} =
+                      \frac{1}{1+\mathrm{e}^{L_{1t}}+\mathrm{e}^{L_{2t}}}
+                      \\[0.5em] \hat{\boldsymbol{\beta}} &amp;=
+                      (X^{\mathsf{T}}X)^{-1} X^{\mathsf{T}} Y \quad
+                      \text{（OLS）} \\[0.5em] L_{\mathrm{agg}}(t) &amp;=
+                      \alpha_0 + \alpha_1 D_t + \alpha_2 S_{\mathrm{sales}}(t) +
+                      \alpha_3 E_t + \varepsilon_t \\
+                      \mathrm{Sales}_{\mathrm{export},t} &amp;=
+                      L_{\mathrm{agg}}(t)\, S_{\mathrm{export},t} \quad
+                      \text{（其余渠道同理）} \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% Problem 2 — 多元 Logit（第三国为基类）
+\begin{aligned}
+L_{1t} &amp;= \ln\frac{S_{\mathrm{export},t}}{S_{\mathrm{third},t}}
+= \beta_0 + \beta_1 D_t + \beta_2 E_t + \varepsilon_{1t} \\
+L_{2t} &amp;= \ln\frac{S_{\mathrm{us},t}}{S_{\mathrm{third},t}}
+= \gamma_0 + \gamma_1 D_t + \gamma_2 E_t + \varepsilon_{2t}
+\\[0.5em]
+S_{\mathrm{export},t} &amp;= \frac{\mathrm{e}^{L_{1t}}}{1+\mathrm{e}^{L_{1t}}+\mathrm{e}^{L_{2t}}},
+\quad
+S_{\mathrm{us},t} = \frac{\mathrm{e}^{L_{2t}}}{1+\mathrm{e}^{L_{1t}}+\mathrm{e}^{L_{2t}}},
+\quad
+S_{\mathrm{third},t} = \frac{1}{1+\mathrm{e}^{L_{1t}}+\mathrm{e}^{L_{2t}}}
+\\[0.5em]
+\hat{\boldsymbol{\beta}} &amp;= (X^{\mathsf{T}}X)^{-1} X^{\mathsf{T}} Y
+\quad \text{（OLS）}
+\\[0.5em]
+L_{\mathrm{agg}}(t) &amp;= \alpha_0 + \alpha_1 D_t + \alpha_2 S_{\mathrm{sales}}(t)
++ \alpha_3 E_t + \varepsilon_t \\
+\mathrm{Sales}_{\mathrm{export},t} &amp;= L_{\mathrm{agg}}(t)\, S_{\mathrm{export},t}
+\quad \text{（其余渠道同理）}
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                  <ul>
+                    <li>
+                      优势：可把非关税应对措施（本土化）内生化进份额竞争。
+                    </li>
+                    <li>
+                      风险：供应链约束与地缘政治扰动需在情景分析中单列灵敏度带。
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong
+                  >Problem 3 — 半导体制造与贸易的双轨冲击（ITS +
+                  SARIMAX）</strong
+                >
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  在高频制造与进出口序列上耦合<strong>中断时间序列（ITS）</strong>与<strong
+                    >季节性 ARIMAX 族</strong
+                  >， 分离趋势、季节与安全溢价导致的结构性折点。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} y_t &amp;= \beta_0 + \beta_1 t + \beta_2
+                      D_t + \beta_3 F_t + \beta_4 D^{\mathrm{sub}}_t + \beta_5
+                      F^{\mathrm{sub}}_t + \varepsilon_t \\[0.5em] (1-\phi_1
+                      L)(1-L)(1-L^{12}) y_t &amp;= (1+\theta_1 L)(1+\Theta_1
+                      L^{12}) \varepsilon_t \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% Problem 3 — ITS + SARIMAX（L：滞后算子）
+\begin{aligned}
+y_t &amp;= \beta_0 + \beta_1 t + \beta_2 D_t + \beta_3 F_t
++ \beta_4 D^{\mathrm{sub}}_t + \beta_5 F^{\mathrm{sub}}_t + \varepsilon_t
+\\[0.5em]
+(1-\phi_1 L)(1-L)(1-L^{12}) y_t
+&amp;= (1+\theta_1 L)(1+\Theta_1 L^{12}) \varepsilon_t
+\end{aligned}
+% (1-L) 一阶差分；(1-L^{12}) 季节差分；\phi_1,\theta_1,\Theta_1 为 AR(1)、MA(1)、季节 MA(1)。</code></pre>
+                    </details>
+                  </div>
+                  <ul>
+                    <li>
+                      分析取向：在同一政策框架下，高端与中低端芯片受到的<strong>效率—安全权衡</strong>呈现分化。
+                    </li>
+                    <li>
+                      模型价值：可把“产业政策”叙事转译为<strong>显著性分段与预测带</strong>，便于跨部门汇报。
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong
+                  >Problem 4 — 关税收入与进口总额的短期预测（分段弹性
+                  Holt-Winters）</strong
+                >
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  在指数平滑基线上叠加<strong>分段价格弹性校正</strong>，刻画“关税推高财政收入”与“税基坍塌（进口缩量）”之间的非线性张力。
+                  情景结论指向：<strong>短期关税收入上冲</strong>，但中后期因贸易规模收缩而存在<strong>约峰值的显著回落区间</strong>（论文给出相对峰值跌幅量级）。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} \ell_t &amp;= \alpha\bigl(M_t -
+                      s_{t-m}\bigr) + (1-\alpha)(\ell_{t-1}+b_{t-1}) \\ b_t
+                      &amp;= \beta(\ell_t-\ell_{t-1}) + (1-\beta)b_{t-1} \\ s_t
+                      &amp;= \gamma\bigl(M_t-\ell_{t-1}-b_{t-1}\bigr) +
+                      (1-\gamma)s_{t-m} \\[0.5em] \widehat{M}_{t+k} &amp;=
+                      \ell_t + b_t k + s_{\,t-m+(k \bmod m)} \\[0.5em]
+                      \varepsilon_{\mathrm{short}} = 0.02,\qquad
+                      \varepsilon_{\mathrm{mid}} = 0.2 \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% Problem 4 — Holt–Winters（m=4 季度季节周期）
+\begin{aligned}
+\ell_t &amp;= \alpha\bigl(M_t - s_{t-m}\bigr) + (1-\alpha)(\ell_{t-1}+b_{t-1}) \\
+b_t &amp;= \beta(\ell_t-\ell_{t-1}) + (1-\beta)b_{t-1} \\
+s_t &amp;= \gamma\bigl(M_t-\ell_{t-1}-b_{t-1}\bigr) + (1-\gamma)s_{t-m}
+\\[0.5em]
+\widehat{M}_{t+k} &amp;= \ell_t + b_t k + s_{\,t-m+(k \bmod m)}
+\\[0.5em]
+\varepsilon_{\mathrm{short}} = 0.02,\qquad
+\varepsilon_{\mathrm{mid}} = 0.2
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                  <ul>
+                    <li>对财政条线：可把动态 Laffer-ish 权衡讲清楚。</li>
+                    <li>
+                      对实体条线：可同时输出进口量级与税负现金流的双预测。
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong
+                  >Problem 5 — 宏观变量的短期脉冲与中期再造（VARX +
+                  结构化方程）</strong
+                >
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  选取表征金融条件、实体经济与周期性行业的核心指标， VARX
+                  族模型用于捕捉关税扰动的<strong>跨市场传导滞后结构</strong>；配合中期路径评估，
+                  论文指出保护主义对制造业回流的<strong>刺激偏短期</strong>，难以独自支撑<strong>持续的产业竞争力重构</strong>——
+                  这对政策评估具有强烈的规范含义。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} \mathbf{Y}_t &amp;= \mathbf{A}_1
+                      \mathbf{Y}_{t-1} + \mathbf{B}\mathbf{X}_t +
+                      \boldsymbol{\varepsilon}_t, \quad
+                      \boldsymbol{\varepsilon}_t \sim
+                      \mathcal{N}(\mathbf{0},\boldsymbol{\Sigma}) \\[0.6em]
+                      \Delta\mathrm{MfgEmp}_t &amp;= \alpha_1
+                      \Delta\mathrm{MfgEmp}_{t-1} + \alpha_2
+                      \Delta\mathrm{IP}_{t-1} + \gamma_1 \mathrm{Shock}_t + u_t
+                      \\ \Delta\mathrm{CapUtil}_t &amp;= \beta_1
+                      \Delta\mathrm{CapUtil}_{t-1} + \beta_2
+                      \Delta\mathrm{IP}_{t-1} + \gamma_2 \mathrm{Shock}_t + v_t
+                      \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% Problem 5 — VARX + 中期动态方程
+\begin{aligned}
+\mathbf{Y}_t &amp;= \mathbf{A}_1 \mathbf{Y}_{t-1} + \mathbf{B}\mathbf{X}_t
++ \boldsymbol{\varepsilon}_t,
+\quad \boldsymbol{\varepsilon}_t \sim \mathcal{N}(\mathbf{0},\boldsymbol{\Sigma})
+\\[0.6em]
+\Delta\mathrm{MfgEmp}_t &amp;= \alpha_1 \Delta\mathrm{MfgEmp}_{t-1}
++ \alpha_2 \Delta\mathrm{IP}_{t-1} + \gamma_1 \mathrm{Shock}_t + u_t \\
+\Delta\mathrm{CapUtil}_t &amp;= \beta_1 \Delta\mathrm{CapUtil}_{t-1}
++ \beta_2 \Delta\mathrm{IP}_{t-1} + \gamma_2 \mathrm{Shock}_t + v_t
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                  <ul>
+                    <li>
+                      场景价值：可把“保护主义叙事”放回数据可检验的动态系统里。
+                    </li>
+                    <li>模型边界：需在附录披露滞后阶选择与稳定性检验明细。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ========== Panel 2: Grand Bay ========== -->
+      <section id="panel-gbc" class="p2-panel" role="tabpanel">
+        <article class="p2-card reveal">
+          <div class="p2-card-head">
+            <h2>题目背景与分析框架</h2>
+            <span class="p2-anchor-tag">2024 大湾区杯 · 金融数学建模</span>
+          </div>
+          <p
+            style="
+              margin: 0 0 16px;
+              color: var(--text-secondary);
+              line-height: 1.85;
+            "
+          >
+            以沪深300成分股十一年尺度的市场交易数据为背景，按照<strong
+              >市场层风险刻度 → 投资组合尾部风险度量 → Logistic / 线性概率预测 →
+              混合型权益事前风控神经网络 → 合理收益区间确定</strong
+            >递进的指标体系完成。
+          </p>
+          <div class="p2-downloads">
+            <a
+              href="../../assets/documents/mathmodel/2024_GrandBayCup_Logistic_SystemicRisk_Paper.pdf"
+              class="p2-download primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-file-pdf"></i> 竞赛论文完整 PDF
+            </a>
+            <a href="../../projects.html" class="p2-download"
+              ><i class="fas fa-th-large"></i> 返回项目</a
+            >
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-1 p2-abstract-card">
+          <div class="p2-card-head">
+            <h2>摘要</h2>
+          </div>
+          <div class="p2-abstract-body">
+            <p class="p2-abstract-lang-label">摘 要</p>
+            <p>
+              以量化方法测度与监测<strong>系统性风险</strong>，是科学高效开展风险管理的核心议题。本文基于<strong>沪深300</strong>行情数据，设计与计算多维风险计量指标，
+              对整体市场与代表性成分开展时间序列与回归分析，构建系统性<strong>预测与预警</strong>框架，并结合历史数据进行回测以论证模型可操作性，
+              为系统性风险的量化刻画提供一条可复现的路径。
+            </p>
+            <p>
+              针对<strong>问题一</strong>，在对附件沪深 300
+              成分股数据清洗与筛选基础上，为实现平均收益率、市场流动性与市场情绪指标的刻画，
+              选取算术平均收益率、<strong>Amihud</strong> 非流动性指标与
+              <strong>AR、BR</strong> 人气—意愿指标，并给出可操作的计算公式；
+              利用近<strong>十余年</strong>样本，逐项阐释各指标的经济含义、适用范围与局限。
+            </p>
+            <p>
+              针对<strong>问题二</strong>，甄选沪深 300 金融板块的<strong
+                >10 只</strong
+              >代表股票，依托<strong>最大回撤、CAPM、CVaR、历史波动率、夏普比率</strong>，
+              并行构建<strong>多元线性回归</strong>与
+              <strong>Logistic 回归</strong>两类系统性风险判别模型；
+              多元线性路径下以<strong>层次分析法</strong>与<strong>组合赋权</strong>确定指标权重，
+              以<strong>十个交易日</strong>为周期、对<strong>一百二十个滚动周期</strong>回测，筛出<strong>二十个</strong>具系统性风险的窗口；
+              Logistic
+              路径采用<strong>极大似然估计</strong>标定五维指标的响应系数，
+              在同等周期结构上回测，<strong>误差约 2.5%</strong
+              >，满足赛前精度预期。
+            </p>
+            <p>
+              针对<strong>问题三</strong>，自通达信平台提取
+              <strong>2014—2024</strong> 全 A
+              行情；面向<strong>混合型权益</strong>产品构建<strong>事前风控</strong>体系，
+              先行设定<strong>权益 60% / 其他 40%</strong> 的资产结构，
+              并承认高波动期股债收益背离，将<strong
+                >单一权益组合最大回撤阈值放宽至 0.5</strong
+              >
+              以内； 采用 <strong>NAR 时间序列神经网络</strong>，按
+              <strong>75% / 15% / 15%</strong> 划分实验、校验与测试集，
+              经网格化调参得<strong>隐含层神经元 9、时间步长 13</strong
+              >的最优刻画，并于代表性个股的史迹区间完成压力回测，
+              结果具有可接受的<strong>实务满意度</strong>。
+            </p>
+            <p>
+              针对<strong>问题四</strong>，计算<strong>十一年</strong>沪深 300
+              成分年化收益<strong>算术均值与中位均值</strong>， 分别约为
+              <strong>14.06%</strong> 与 <strong>3.10%</strong>；
+              中位均值与<strong>十年期国债长期均值（约 3.07%）</strong
+              >量级接近，
+              故将<strong>年化均值视作股权合理收益上界锚</strong>、以<strong>十年期国债均值为下界锚</strong>，
+              得到<strong>理性收益预期区间 3.07%—14.06%</strong>。
+            </p>
+            <p>
+              文末对各模型进行综合复盘，并提出面向样本外稳健性、高频扩展与深度学习融合的改进议程，以供后续研究者迭代。
+            </p>
+            <p class="p2-abstract-kw">
+              <strong>关键词：</strong>线性回归；Logistic 模型；NAR
+              神经网络；时间序列分析；系统性风险
+            </p>
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-2">
+          <h3 class="p2-pipeline-title">Pipeline</h3>
+          <div class="p2-pipeline">
+            <div class="p2-stage">
+              <span class="p2-stage-num">01</span>
+              <h3>数据清洗</h3>
+              <p>
+                缺失交易日、权重舍入与跨表对齐；Matlab 侧按股票代码 merge
+                权重与行情。
+              </p>
+            </div>
+            <div class="p2-stage">
+              <span class="p2-stage-num">02</span>
+              <h3>指标体系</h3>
+              <p>收益 / Amihud 非流动性 / AR·BR；再构造 CVaR、CAPM、MDD。</p>
+            </div>
+            <div class="p2-stage">
+              <span class="p2-stage-num">03</span>
+              <h3>统计学习</h3>
+              <p>
+                AHP + 组合赋权；多元线性 + Logistic 概率预测；NAR 神经网络风控。
+              </p>
+            </div>
+            <div class="p2-stage">
+              <span class="p2-stage-num">04</span>
+              <h3>结果解释</h3>
+              <p>回测误差、合理收益区间与模型局限 transparent 呈现。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-3">
+          <div class="p2-card-head">
+            <h2>任务一：数据处理与指标计算</h2>
+            <span class="p2-anchor-tag">Descriptive analysis</span>
+          </div>
+          <p
+            style="
+              margin: 0 0 12px;
+              color: var(--text-secondary);
+              line-height: 1.85;
+            "
+          >
+            沪深300附件存在<strong>交易天数参差、零星缺失与权重异常年</strong>，
+            在本题中我们的处理思路是<strong>在可解释前提下最大化可用信息</strong>对缺失日以日频指标聚合，
+            采纳官方披露值，避免人造噪音。
+          </p>
+          <div class="p2-models">
+            <div class="p2-model open">
+              <div class="p2-model-head">
+                <strong>平均收益率｜算术日收益链路</strong>
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  基于日收盘价推导单期收益，随后在年度截面内聚合为<strong>日平均收益率</strong>，再横向比较
+                  2015—2024
+                  十年的市场刻度。该方法优点在于透明、可直接对接教材级解释；缺点是<strong>易受极端行情扰动</strong>，因而在任务二中引入尾部风险度量作为互补。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} W_{d,i} &amp;= \frac{c_i -
+                      c_{i-1}}{c_{i-1}} \quad \text{（} c_i \text{ 为第 } i
+                      \text{ 日收盘价）} \\[0.5em] W_y &amp;=
+                      \frac{1}{n-1}\sum_{i=2}^{n} W_{d,i} \quad \text{（} n
+                      \text{ 为当年交易日个数）} \\[0.5em] W_s &amp;=
+                      \frac{1}{10}\sum_{j=1}^{10} W_{y}^{(j)} \quad
+                      \text{（2015--2024 共10年市场刻度）} \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre class="p2-model-formula"><code>% 任务一 — 平均收益率
+\begin{aligned}
+W_{d,i} &amp;= \frac{c_i - c_{i-1}}{c_{i-1}}
+\quad \text{（} c_i \text{ 为第 } i \text{ 日收盘价）}
+\\[0.5em]
+W_y &amp;= \frac{1}{n-1}\sum_{i=2}^{n} W_{d,i}
+\quad \text{（} n \text{ 为当年交易日个数）}
+\\[0.5em]
+W_s &amp;= \frac{1}{10}\sum_{j=1}^{10} W_{y}^{(j)}
+\quad \text{（2015--2024 共10年市场刻度）}
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong>流动性｜Amihud 非流动性</strong>
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  在未披露换手率等字段时，选取Amihud 指标，
+                  并对<strong>取对数变换</strong>后的序列做跨年平均，以获得对整体性流动性紧缩宽裕的稳健性。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} Q_{\mathrm{Amihud}} &amp;=
+                      \frac{1}{n-1}\sum_{i=2}^{n} \frac{\lvert
+                      W_{d,i}\rvert}{a_i} \\[0.4em] \ln Q_{\mathrm{Amihud}}
+                      &amp;= -\ln\!\left( \frac{1}{n-1}\sum_{i=2}^{n}
+                      \frac{\lvert W_{d,i}\rvert}{a_i} \right) \\[0.4em]
+                      \overline{\ln Q} &amp;= \frac{1}{10}\sum_{j=1}^{10} \ln
+                      Q_{\mathrm{Amihud}}^{(j)} \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% 任务一 — Amihud（成交额 a_i：百万元）
+\begin{aligned}
+Q_{\mathrm{Amihud}} &amp;= \frac{1}{n-1}\sum_{i=2}^{n} \frac{\lvert W_{d,i}\rvert}{a_i}
+\\[0.4em]
+\ln Q_{\mathrm{Amihud}} &amp;= -\ln\!\left(
+\frac{1}{n-1}\sum_{i=2}^{n} \frac{\lvert W_{d,i}\rvert}{a_i}
+\right)
+\\[0.4em]
+\overline{\ln Q} &amp;= \frac{1}{10}\sum_{j=1}^{10} \ln Q_{\mathrm{Amihud}}^{(j)}
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong>情绪｜AR / BR（26 日）</strong>
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  综合利用高价、开盘价、收盘价与滚动窗口， AR
+                  侧重<strong>攻击性多头动能</strong>，BR
+                  强调<strong>情绪惯性</strong>。
+                  对极值敏感的现实约束下，采用<strong>按成分股权重聚合</strong>以处理异常值。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} \mathrm{AR}(n) &amp;=
+                      \frac{\sum_{i=1}^{n}(H_i-O_i)}{\sum_{i=1}^{n}(O_i-L_i)}
+                      \times 100\% \\[0.5em] \mathrm{BR}(n) &amp;=
+                      \frac{\sum_{i=2}^{n}(H_i-C_{i-1})}{\sum_{i=2}^{n}(C_{i-1}-L_i)}
+                      \times 100\% \\[0.5em] \overline{\mathrm{AR}} &amp;=
+                      \frac{1}{10}\sum_{j=1}^{10} \mathrm{AR}^{(j)}(n), \quad
+                      \overline{\mathrm{BR}} = \frac{1}{10}\sum_{j=1}^{10}
+                      \mathrm{BR}^{(j)}(n) \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% 任务一 — AR / BR（n=26 等窗口）
+\begin{aligned}
+\mathrm{AR}(n) &amp;= \frac{\sum_{i=1}^{n}(H_i-O_i)}{\sum_{i=1}^{n}(O_i-L_i)} \times 100\%
+\\[0.5em]
+\mathrm{BR}(n) &amp;= \frac{\sum_{i=2}^{n}(H_i-C_{i-1})}{\sum_{i=2}^{n}(C_{i-1}-L_i)} \times 100\%
+\\[0.5em]
+\overline{\mathrm{AR}} &amp;= \frac{1}{10}\sum_{j=1}^{10} \mathrm{AR}^{(j)}(n),
+\quad
+\overline{\mathrm{BR}} = \frac{1}{10}\sum_{j=1}^{10} \mathrm{BR}^{(j)}(n)
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-4">
+          <div class="p2-card-head">
+            <h2>任务二：风险计量 Logistic回归预测</h2>
+            <span class="p2-anchor-tag">Regression & Forecast</span>
+          </div>
+          <p
+            style="
+              margin: 0 0 12px;
+              color: var(--text-secondary);
+              line-height: 1.85;
+            "
+          >
+            在沪深300金融板块精选<strong>10 只代表性蓝筹股</strong
+            >构建等权组合，截取连续 1200 交易日窗口。 每个
+            <strong>10 日滚动周期</strong
+            >生成一组多维风险画像：在历史模拟法框架下， CVaR
+            负责<strong>尾部平均损失</strong>；CAPM β 对齐系统性暴露；MDD
+            描述路径依赖的毁灭性回撤。
+          </p>
+          <div class="p2-mini" style="margin-bottom: 14px">
+            <h4>组合赋权与一致性检验</h4>
+            <p>
+              层次分析法给出的主观权重向量经<strong
+                >一致性比率 CR &lt; 0.1</strong
+              >
+              （论文计算值约 <strong>0.0079</strong>）
+              检验后，再与夏普比率、历史波动率等客观指标耦合，形成一个<strong>可追溯权重的加权风险得分</strong>，
+              最后嵌入多元线性判别与 Logistic
+              概率映射两条路径，对比解释力与误判成本。
+            </p>
+          </div>
+          <div class="p2-models">
+            <div class="p2-model open">
+              <div class="p2-model-head">
+                <strong>模型1：多元线性回归</strong>
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  在连续风险得分空间内做线性校准，优点是系数易于向业务方口述；
+                  缺点是对<strong>阈值附近的概率解释</strong>不如 Logistic
+                  自然， 因此论文并行保留，以便做验证和效果对比。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} W_{d,1} &amp; &lt; \cdots &lt;
+                      W_{d,10},\quad \alpha_0=0.85 \Rightarrow
+                      \mathrm{VaR}=W_{d,2},\quad
+                      Q_{\mathrm{CVaR}}=\frac{W_{d,1}+W_{d,2}}{2} \\[0.4em]
+                      \beta &amp;=
+                      \frac{\mathrm{Cov}\bigl(\mathbb{E}[W_d],\mathbb{E}[R_m]\bigr)}
+                      {\mathrm{Var}(R_m)},\quad Q_{\mathrm{CAPM}} = R_{f1} +
+                      \beta\,\mathbb{E}[R_m-R_{f1}] \quad (R_{f1}=1.41\%)
+                      \\[0.4em] Q_{\mathrm{MDD}} &amp;=
+                      \frac{\text{谷底}-\text{历史峰值}}{\text{历史峰值}}\times
+                      100\% \\[0.4em] Q_{\mathrm{Sharpe}} &amp;=
+                      \frac{\mathbb{E}[W_d-R_{f1}]}
+                      {\sqrt{\mathrm{Var}(W_d-R_{f1})}},\quad \ln
+                      W_{d,i}=\ln\frac{c_i}{c_{i-1}},\quad
+                      Q_{\mathrm{Vol}}=\mathrm{Var}(\ln W_d) \\[0.4em]
+                      \mathrm{CI}=\frac{\lambda_{\max}-n}{n-1},\quad
+                      \mathrm{CR}=\frac{\mathrm{CI}}{\mathrm{RI}} \\[0.4em] P
+                      &amp;= 0.3\,Q_{\mathrm{Sharpe}} + 0.2\,Q_{\mathrm{Vol}} +
+                      0.0817\,Q_{\mathrm{CVaR}} + 0.2698\,Q_{\mathrm{CAPM}} +
+                      0.1485\,Q_{\mathrm{MDD}} \\[0.3em] &amp;\lvert P\rvert
+                      &gt; 0.2 \Rightarrow \text{该周期判定为存在系统性风险}
+                      \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre
+                        class="p2-model-formula"
+                      ><code>% 任务二 — CVaR / CAPM / MDD / 组合赋权（10日周期）
+\begin{aligned}
+W_{d,1} &amp; &lt; \cdots &lt; W_{d,10},\quad \alpha_0=0.85
+\Rightarrow \mathrm{VaR}=W_{d,2},\quad
+Q_{\mathrm{CVaR}}=\frac{W_{d,1}+W_{d,2}}{2}
+\\[0.4em]
+\beta &amp;= \frac{\mathrm{Cov}\bigl(\mathbb{E}[W_d],\mathbb{E}[R_m]\bigr)}
+{\mathrm{Var}(R_m)},\quad
+Q_{\mathrm{CAPM}} = R_{f1} + \beta\,\mathbb{E}[R_m-R_{f1}]
+\quad (R_{f1}=1.41\%)
+\\[0.4em]
+Q_{\mathrm{MDD}} &amp;= \frac{\text{谷底}-\text{历史峰值}}{\text{历史峰值}}\times 100\%
+\\[0.4em]
+Q_{\mathrm{Sharpe}} &amp;= \frac{\mathbb{E}[W_d-R_{f1}]}
+{\sqrt{\mathrm{Var}(W_d-R_{f1})}},\quad
+\ln W_{d,i}=\ln\frac{c_i}{c_{i-1}},\quad
+Q_{\mathrm{Vol}}=\mathrm{Var}(\ln W_d)
+\\[0.4em]
+\mathrm{CI}=\frac{\lambda_{\max}-n}{n-1},\quad
+\mathrm{CR}=\frac{\mathrm{CI}}{\mathrm{RI}}
+\\[0.4em]
+P &amp;= 0.3\,Q_{\mathrm{Sharpe}} + 0.2\,Q_{\mathrm{Vol}}
++ 0.0817\,Q_{\mathrm{CVaR}} + 0.2698\,Q_{\mathrm{CAPM}}
++ 0.1485\,Q_{\mathrm{MDD}}
+\\[0.3em]
+&amp;\lvert P\rvert &gt; 0.2 \Rightarrow \text{该周期判定为存在系统性风险}
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p2-model">
+              <div class="p2-model-head">
+                <strong>模型2：Logistic回归</strong>
+                <i
+                  class="fas fa-chevron-down p2-model-chev"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="p2-model-body">
+                <div class="p2-model-body-inner">
+                  通过极大似然估计得到判别超平面，在历史 120
+                  个滚动周期上做样本外回测。 Logistic 支路的<strong
+                    >误判率收敛至约 2.5%</strong
+                  >（论文口径），达到了竞赛场景下可用的稳健区间。
+                  <p class="p2-model-formula-label">论文模型公式</p>
+                  <div class="p2-formula-block">
+                    <div class="p2-formula-render">
+                      $$\begin{aligned} f_k &amp;= b_0 + \sum_{i=1}^{5} b_i\,
+                      x_{k,i}, \quad
+                      \mathbf{x}_k=(Q_{\mathrm{MDD}},Q_{\mathrm{CAPM}},Q_{\mathrm{CVaR}},
+                      Q_{\mathrm{Vol}},Q_{\mathrm{Sharpe}}) \\[0.4em] P_k &amp;=
+                      \frac{1}{1+\mathrm{e}^{-f_k}},\qquad f_k =
+                      \ln\frac{P_k}{1-P_k} \\[0.4em] \mathcal{L} &amp;= \prod_k
+                      P_k^{y_k}(1-P_k)^{1-y_k},\quad \ln\mathcal{L} = \sum_k
+                      \bigl( y_k f_k - \ln(1+\mathrm{e}^{f_k}) \bigr) \\[0.5em]
+                      P_k &amp;= \Bigl(1+\exp\bigl(-( 9.7372\,Q_{\mathrm{MDD}} +
+                      78.0779\,Q_{\mathrm{CAPM}} -185.4314\,Q_{\mathrm{CVaR}} -
+                      51.6847\,Q_{\mathrm{Vol}} +185.7481\,Q_{\mathrm{Sharpe}} -
+                      94.0688 )\bigr)\Bigr)^{-1} \end{aligned}$$
+                    </div>
+                    <details class="p2-formula-source-drawer">
+                      <summary>LaTeX 源码</summary>
+                      <pre class="p2-model-formula"><code>% 任务二 — Logistic
+\begin{aligned}
+f_k &amp;= b_0 + \sum_{i=1}^{5} b_i\, x_{k,i},
+\quad \mathbf{x}_k=(Q_{\mathrm{MDD}},Q_{\mathrm{CAPM}},Q_{\mathrm{CVaR}},
+Q_{\mathrm{Vol}},Q_{\mathrm{Sharpe}})
+\\[0.4em]
+P_k &amp;= \frac{1}{1+\mathrm{e}^{-f_k}},\qquad
+f_k = \ln\frac{P_k}{1-P_k}
+\\[0.4em]
+\mathcal{L} &amp;= \prod_k P_k^{y_k}(1-P_k)^{1-y_k},\quad
+\ln\mathcal{L} = \sum_k \bigl( y_k f_k - \ln(1+\mathrm{e}^{f_k}) \bigr)
+\\[0.5em]
+P_k &amp;= \Bigl(1+\exp\bigl(-(
+9.7372\,Q_{\mathrm{MDD}} + 78.0779\,Q_{\mathrm{CAPM}}
+-185.4314\,Q_{\mathrm{CVaR}} - 51.6847\,Q_{\mathrm{Vol}}
++185.7481\,Q_{\mathrm{Sharpe}} - 94.0688
+)\bigr)\Bigr)^{-1}
+\end{aligned}</code></pre>
+                    </details>
+                  </div>
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h4>回测数据与结果</h4>
+          <div class="p2-kpis">
+            <div class="p2-kpi">
+              <span class="p2-kpi-val">10</span>
+              <span class="p2-kpi-label">投资组合选股</span>
+            </div>
+            <div class="p2-kpi">
+              <span class="p2-kpi-val">120</span>
+              <span class="p2-kpi-label">周期回测样本</span>
+            </div>
+            <div class="p2-kpi">
+              <span class="p2-kpi-val">≈2.5%</span>
+              <span class="p2-kpi-label">Logistic 回测误差</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="p2-card reveal delay-5">
+          <div class="p2-card-head">
+            <h2>任务三、四：NAR 事前风控、收益预期</h2>
+            <span class="p2-anchor-tag">Control</span>
+          </div>
+          <div class="p2-thesis-grid p2-thesis-grid--stack">
+            <div class="p2-mini">
+              <h4>任务三｜回撤约束下的神经网络</h4>
+              <p>
+                在通达信导出 2014—2024 全 A 数据基础上，
+                <strong>舍弃信息密度不足的 2014 训练截面</strong
+                >以降低噪声占优风险。 针对混合型权益（假设权益 60% / 其它
+                40%），在高波动市中允许<strong
+                  >极端最大回撤阈值放宽至 0.5</strong
+                >， 以捕捉股债背离时权益端的尾部压力。采用
+                <strong>NAR 动态神经网络</strong>， 经网格化调参后锁定
+                <strong>隐层神经元 9 · 时间步 13</strong> 的配置，
+                <strong>75% / 15% / 15%</strong>
+                切分实验、验证与测试集合，并以代表性个股的时段压力测试检视模型“是否只会拟合均值”。
+              </p>
+              <p class="p2-model-formula-label">论文模型公式</p>
+              <div class="p2-formula-block">
+                <div class="p2-formula-render">
+                  $$\begin{aligned} y(n) &amp;=
+                  f\bigl(y(n-1),y(n-2),\ldots,y(n-d)\bigr) \quad \text{（} d
+                  \text{ 为时滞阶数）} \\[0.5em] r(x,y) &amp;= \frac{\sum_i x_i
+                  y_i - n\bar{x}\bar{y}} {\sqrt{\sum_i
+                  (x_i-\bar{x})^2}\,\sqrt{\sum_i (y_i-\bar{y})^2}}, \quad E =
+                  \sum_i (\hat{y}_i - y_i)^2 \end{aligned}$$
+                </div>
+                <details class="p2-formula-source-drawer">
+                  <summary>LaTeX 源码</summary>
+                  <pre
+                    class="p2-model-formula"
+                  ><code>% 任务三 — NAR 神经网络 + 评价指标
+\begin{aligned}
+y(n) &amp;= f\bigl(y(n-1),y(n-2),\ldots,y(n-d)\bigr)
+\quad \text{（} d \text{ 为时滞阶数）}
+\\[0.5em]
+r(x,y) &amp;= \frac{\sum_i x_i y_i - n\bar{x}\bar{y}}
+{\sqrt{\sum_i (x_i-\bar{x})^2}\,\sqrt{\sum_i (y_i-\bar{y})^2}},
+\quad
+E = \sum_i (\hat{y}_i - y_i)^2
+\end{aligned}
+% 事前风控：组合总回撤 \leq 0.7、权益 60\% \Rightarrow 权益端 MDD 阈值约 0.5；
+% 未来5日收盘最低价不低于历史峰值的 50\% 为安全，否则预警。</code></pre>
+                </details>
+              </div>
+            </div>
+            <div class="p2-mini">
+              <h4>任务四｜合理收益区间</h4>
+              <p>
+                对十一年沪深300成分股年化收益的<strong>算术均值与中位数</strong>双路径对照：
+                <strong>14.06%</strong>
+                vs
+                <strong>3.10%</strong>，后者几乎贴近十年期国债长期均值
+                <strong>3.07%</strong>。 最终将<strong>市场化上界锚</strong>
+                （均值表征进攻型预期）与
+                <strong>无风险基准下界</strong>以国债为基准对比呈现，
+                得到具有监管沟通友好度的<strong
+                  >区间型收益预期：[3.07%, 14.06%]</strong
+                >， 并明确该方法对分布偏斜的敏感性警示。
+              </p>
+              <p class="p2-model-formula-label">论文模型公式</p>
+              <div class="p2-formula-block">
+                <div class="p2-formula-render">
+                  $$W_y = \prod_{i=1}^{244}(1+W_{d,i}) - 1$$
+                </div>
+                <details class="p2-formula-source-drawer">
+                  <summary>LaTeX 源码</summary>
+                  <pre
+                    class="p2-model-formula"
+                  ><code>% 任务四 — 年化收益（每年 244 个交易日）
+\begin{equation*}
+W_y = \prod_{i=1}^{244}(1+W_{d,i}) - 1
+\end{equation*}
+% 在全市场成分上逐年计算 W_y，再对算术均值、中位数等统计量与十年期国债对照；
+% 论文给出合理股权收益预期区间约 $[3.07\%,\,14.06\%]$。</code></pre>
+                </details>
+              </div>
+            </div>
+          </div>
+          <blockquote class="p2-quote">
+            本题的难点是指标的自行选择与构建。为了使得得出的结论可以被合理的解释，在比赛过程中，我们补充学习了一部分金融数学的知识，阅读了相关股市市场的术语和基本假设。
+          </blockquote>
+        </article>
+      </section>
+    </div>
+
+    <div class="detail-actions detail-actions-floating p2-float">
+      <a href="../../projects.html" class="detail-btn primary"
+        ><i class="fas fa-arrow-left"></i> 返回</a
+      >
+    </div>
+
+    <script src="../../js/pages/main.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="../../js/pages/projects/project2.js"></script>
+  </body>
+</html>
