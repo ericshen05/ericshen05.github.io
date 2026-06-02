@@ -292,7 +292,6 @@
   color: var(--text-secondary);
 }
 
-/* 响应式调整 */
 @media (max-width: 1024px) {
   .profile-content {
     grid-template-columns: 1fr !important;
@@ -302,11 +301,50 @@
   .profile-showcase {
     max-width: 500px;
     margin: 0 auto;
+    width: 100%;
+  }
+
+  .copyright-detail {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    gap: 1.5rem;
+    max-width: none;
+  }
+
+  .profile-showcase {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .profile-contact-item {
+    font-size: 0.85rem;
+    word-break: break-all;
+  }
+
+  .copyright-card,
+  .license-card {
+    padding: 1.25rem;
+  }
+
+  .copyright-text {
+    font-size: 1.1rem;
   }
 
   .copyright-detail {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
   }
 }
 

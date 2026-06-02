@@ -4,25 +4,33 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateY(0deg);
   transition: var(--transition-smooth);
 }
 
-/* 只有悬停在整个媒体区域时才触发3D效果，不包含轮播图内部元素的缩放 */
-.project-media:not(:has(.carousel)):hover {
-  transform: perspective(1000px) rotateY(-2deg) scale(1.02);
-  box-shadow:
-    var(--shadow-xl),
-    0 0 0 2px var(--primary-light);
+@media (hover: hover) and (pointer: fine) {
+  .project-media:not(:has(.carousel)):hover {
+    transform: perspective(1000px) rotateY(-2deg) scale(1.02);
+    box-shadow:
+      var(--shadow-xl),
+      0 0 0 2px var(--primary-light);
+  }
 }
 
-/* ===== 轮播图样式 ===== */
+.media-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+/* ===== 轮播图 ===== */
 .carousel {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: var(--radius-xl);
+  border-radius: inherit;
 }
 
 .carousel-track {
@@ -30,13 +38,11 @@
   width: 100%;
   height: 100%;
   transition: transform 0.5s ease-in-out;
-  border-radius: var(--radius-xl);
 }
 
 .carousel-slide {
   flex: 0 0 100%;
   height: 100%;
-  border-radius: var(--radius-xl);
   overflow: hidden;
 }
 
@@ -44,16 +50,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-xl);
-  transition: transform 0.5s ease-in-out; /* 改为较慢的过渡 */
+  border-radius: inherit;
 }
 
-/* 轮播图内部图片悬停效果（单独控制） */
-.carousel-slide:hover img {
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .carousel-slide:hover img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+  }
 }
 
-/* 轮播指示点 - 悬停时不触发放大效果 */
 .carousel-dots {
   position: absolute;
   bottom: 1rem;
@@ -61,12 +67,11 @@
   transform: translateX(-50%);
   display: flex;
   gap: 0.5rem;
-  z-index: 30;
+  z-index: 10;
   background: rgba(255, 255, 255, 0.6);
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
   backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
 }
 
 .carousel-dots .dot {
@@ -76,7 +81,6 @@
   background: var(--text-secondary);
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
 }
 
 .carousel-dots .dot.active {
@@ -85,44 +89,46 @@
   box-shadow: 0 0 0 2px rgba(106, 140, 255, 0.3);
 }
 
-.carousel-dots .dot:hover {
-  background: var(--primary-light);
-  transform: scale(1.2);
+@media (hover: hover) {
+  .carousel-dots .dot:hover {
+    background: var(--primary-light);
+    transform: scale(1.2);
+  }
 }
 
-/* 确保轮播图按钮和指示点不会触发图片放大 */
-.carousel-btn,
-.carousel-dots,
-.carousel-dots * {
-  pointer-events: auto; /* 确保可点击 */
-}
-
-/* 修复悬停时的层级问题 */
-.carousel {
-  position: relative;
-  z-index: 1;
-}
-
-.carousel-btn,
-.carousel-dots {
-  z-index: 10;
-}
-
-/* 修复 reverse 布局中的轮播图方向 */
-.project-content.reverse .carousel {
-  direction: ltr; /* 强制轮播图使用左到右方向 */
-}
-
+.project-content.reverse .carousel,
 .project-content.reverse .carousel-track {
   direction: ltr;
 }
 
-.project-content.reverse .carousel-btn.prev {
-  left: 1rem;
-  right: auto;
+@media (max-width: 768px) {
+  .media-container {
+    aspect-ratio: 4 / 3;
+  }
+
+  .carousel-slide img {
+    object-fit: contain;
+    background: var(--card-bg);
+  }
+
+  .carousel-dots {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .carousel-dots .dot {
+    width: 6px;
+    height: 6px;
+  }
 }
 
-.project-content.reverse .carousel-btn.next {
-  right: 1rem;
-  left: auto;
+[data-theme="dark"] .carousel-dots {
+  background: rgba(26, 31, 48, 0.8);
+}
+
+[data-theme="dark"] .carousel-dots .dot {
+  background: var(--text-light);
+}
+
+[data-theme="dark"] .carousel-dots .dot.active {
+  background: var(--primary-light);
 }
